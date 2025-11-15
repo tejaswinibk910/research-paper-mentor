@@ -7,7 +7,7 @@ import json
 import os
 from pathlib import Path
 from typing import Dict, Any
-from datetime import datetime
+from datetime import datetime, date
 
 
 class PersistentStorage:
@@ -28,7 +28,7 @@ class PersistentStorage:
         temp_file = file_path.with_suffix('.tmp')
         try:
             with temp_file.open('w') as f:
-                json.dump(serializable_data, f, indent=2)
+                json.dump(serializable_data, f, indent=2, default=str)
             
             # Atomic replace
             temp_file.replace(file_path)
@@ -57,17 +57,50 @@ class PersistentStorage:
     
     def _make_serializable(self, obj: Any) -> Any:
         """Convert Pydantic models and other objects to JSON-serializable format"""
-        if hasattr(obj, 'dict'):
-            # Pydantic model
-            return obj.dict()
-        elif isinstance(obj, dict):
-            return {k: self._make_serializable(v) for k, v in obj.items()}
-        elif isinstance(obj, list):
-            return [self._make_serializable(item) for item in obj]
-        elif isinstance(obj, datetime):
+        # Handle None
+        if obj is None:
+            return None
+        
+        # Handle datetime and date objects
+        if isinstance(obj, (datetime, date)):
             return obj.isoformat()
-        else:
+        
+        # Handle Pydantic models (v1 and v2)
+        if hasattr(obj, 'model_dump'):
+            # Pydantic v2
+            try:
+                return self._make_serializable(obj.model_dump())
+            except Exception:
+                pass
+        
+        if hasattr(obj, 'dict'):
+            # Pydantic v1
+            try:
+                return self._make_serializable(obj.dict())
+            except Exception:
+                pass
+        
+        # Handle dictionaries
+        if isinstance(obj, dict):
+            return {k: self._make_serializable(v) for k, v in obj.items()}
+        
+        # Handle lists and tuples
+        if isinstance(obj, (list, tuple)):
+            return [self._make_serializable(item) for item in obj]
+        
+        # Handle sets
+        if isinstance(obj, set):
+            return [self._make_serializable(item) for item in obj]
+        
+        # Handle basic types
+        if isinstance(obj, (str, int, float, bool)):
             return obj
+        
+        # Try to convert to string as last resort
+        try:
+            return str(obj)
+        except Exception:
+            return None
 
 
 # Global storage instance
@@ -76,7 +109,7 @@ storage = PersistentStorage()
 
 def save_all_databases(papers_db, summaries_db, concept_graphs_db, 
                        chat_sessions_db, quizzes_db, quiz_results_db,
-                       concept_understandings_db):
+                       user_progress_db):
     """Save all in-memory databases"""
     try:
         storage.save('papers', papers_db)
@@ -85,10 +118,12 @@ def save_all_databases(papers_db, summaries_db, concept_graphs_db,
         storage.save('chat_sessions', chat_sessions_db)
         storage.save('quizzes', quizzes_db)
         storage.save('quiz_results', quiz_results_db)
-        storage.save('concept_understandings', concept_understandings_db)
+        storage.save('user_progress', user_progress_db)
         print("✅ All databases saved successfully")
     except Exception as e:
         print(f"❌ Error saving databases: {e}")
+        import traceback
+        traceback.print_exc()
 
 
 def load_all_databases():
@@ -100,11 +135,13 @@ def load_all_databases():
         chat_sessions = storage.load('chat_sessions')
         quizzes = storage.load('quizzes')
         quiz_results = storage.load('quiz_results')
-        concept_understandings = storage.load('concept_understandings')
+        user_progress = storage.load('user_progress')
         
         print("✅ All databases loaded successfully")
         return (papers, summaries, concept_graphs, chat_sessions, 
-                quizzes, quiz_results, concept_understandings)
+                quizzes, quiz_results, user_progress)
     except Exception as e:
         print(f"❌ Error loading databases: {e}")
+        import traceback
+        traceback.print_exc()
         return ({}, {}, {}, {}, {}, {}, {})

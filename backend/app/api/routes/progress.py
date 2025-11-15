@@ -130,7 +130,44 @@ async def get_concept_mastery(
     
     return progress.concepts_mastery
 
-
+@router.get("/progress/{user_id}/{paper_id}/concepts")
+async def get_concept_progress(
+    user_id: str,
+    paper_id: str,
+    current_user: User = Depends(get_current_user)
+):
+    """Get concept progress - COMPATIBLE WITH FRONTEND"""
+    if str(current_user.id) != user_id:
+        raise HTTPException(status_code=403, detail="Access denied")
+    
+    print(f"\n🎯 Getting concept progress for user {user_id}, paper {paper_id}")
+    
+    if paper_id not in concept_graphs_db:
+        raise HTTPException(status_code=404, detail="Paper concepts not found")
+    
+    progress = get_or_create_progress(user_id, paper_id)
+    _update_progress(progress, user_id, paper_id)
+    
+    # Convert ConceptMastery to format expected by frontend
+    concept_progress = []
+    for cm in progress.concepts_mastery:
+        concept_progress.append({
+            "user_id": user_id,
+            "concept_id": cm.concept_id,
+            "paper_id": paper_id,
+            "is_understood": cm.mastery_level >= 0.8,
+            "confidence_level": cm.mastery_level,
+            "times_reviewed": cm.times_reviewed,
+            "times_quizzed": cm.times_quizzed,
+            "correct_answers": int(cm.mastery_level * cm.times_quizzed) if cm.times_quizzed > 0 else 0,
+            "last_reviewed": None,
+            "next_review": None,
+            "ease_factor": 2.5,
+            "interval_days": 1
+        })
+    
+    print(f"✅ Returning {len(concept_progress)} concept progress records")
+    return concept_progress
 @router.get("/progress/{user_id}/{paper_id}/due-for-review")
 async def get_concepts_due_for_review(
     user_id: str,

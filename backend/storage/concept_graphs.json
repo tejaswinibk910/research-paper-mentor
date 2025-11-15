@@ -1,0 +1,1179 @@
+{
+  "f9fe1b16-0538-4492-93b8-01d755eab2ba": {
+    "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+    "concepts": [
+      {
+        "id": "32be615e-cf47-4f87-8e86-6d6bcca35be0",
+        "name": "Multimodal Learning",
+        "type": "definition",
+        "definition": "A subfield of machine learning that involves processing and relating information from multiple sources or modalities.",
+        "explanation": "Multimodal learning combines data from different modalities, such as vision, hearing, and text, to improve the performance of models and enable more robust inference.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "87e9b4fb-8b73-40d9-a777-e1d9481b724e"
+        ],
+        "examples": [
+          "Image and text classification",
+          "Speech recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "e45d293d-b5f4-4681-bab2-40365c22ef8f",
+        "name": "Patch Embedding",
+        "type": "definition",
+        "definition": "A technique used in vision transformers to divide an image into smaller patches and embed them into a sequence of tokens.",
+        "explanation": "Patch embedding enables the use of transformer architectures for image classification tasks by providing a way to handle images as sequences of patches.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Vision Transformers (ViT)"
+        ],
+        "equations": [],
+        "importance_score": 0.9
+      },
+      {
+        "id": "15f2743f-d902-4220-99ab-9bb4e8277c78",
+        "name": "Convolutional Neural Networks (CNNs)",
+        "type": "definition",
+        "definition": "A type of neural network designed to process data with grid-like topology, such as images.",
+        "explanation": "CNNs use convolutional and pooling layers to extract features from images and are widely used for image classification tasks.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Image classification",
+          "Object detection"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "1b0f925d-fc84-4613-9cd5-3cf1a0abc349",
+        "name": "Isotropic Neural Architecture",
+        "type": "definition",
+        "definition": "A neural network architecture that can handle inputs of varying sizes and aspect ratios.",
+        "explanation": "Isotropic neural architectures are designed to be flexible and can be used for a variety of tasks, including image and time series classification.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "5b9d333b-3119-428f-808e-1f4f58b14b2f",
+        "name": "Minape",
+        "type": "definition",
+        "definition": "A novel multimodal isotropic neural architecture that incorporates patch embedding for time series and image data classification.",
+        "explanation": "Minape is a lightweight and efficient architecture that can be used for multimodal classification tasks and requires fewer parameters and less memory than existing models.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Multimodal device state recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.9
+      },
+      {
+        "id": "98cdb66c-9737-41e5-91df-7988e0566836",
+        "name": "Transformer-Based Models",
+        "type": "definition",
+        "definition": "A type of neural network architecture that uses self-attention mechanisms to process sequences of data.",
+        "explanation": "Transformer-based models are widely used for natural language processing tasks and have been adapted for use in computer vision and other areas.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "f3bb3b51-8728-48b5-a3d8-ea9b1ff45e13"
+        ],
+        "examples": [
+          "BERT",
+          "Vision Transformers (ViT)"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "87e9b4fb-8b73-40d9-a777-e1d9481b724e",
+        "name": "Multimodal Fusion",
+        "type": "definition",
+        "definition": "The process of combining data from multiple modalities to improve the performance of a model.",
+        "explanation": "Multimodal fusion can be used to combine data from different sources, such as images, text, and audio, to enable more robust inference.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Image and text classification",
+          "Speech recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "23f18e91-ba7d-43d7-bbd6-066a37fd2e9d",
+        "name": "Time Series Classification",
+        "type": "definition",
+        "definition": "The process of classifying time series data into different categories.",
+        "explanation": "Time series classification is a challenging task that requires the use of specialized techniques and models, such as recurrent neural networks and convolutional neural networks.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Device state recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "ed219795-92f9-4e69-b592-73e7e0dc5bfa",
+        "name": "Device State Recognition",
+        "type": "definition",
+        "definition": "The process of classifying the state of a device based on sensor data.",
+        "explanation": "Device state recognition is an important task in industrial settings, where it can be used to monitor the condition of devices and predict maintenance needs.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Predictive maintenance"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "0586bf7d-f8f2-4149-ba2f-34ac5971f8a8",
+        "name": "Gaussian Error Linear Unit (GELU)",
+        "type": "definition",
+        "definition": "A type of activation function used in neural networks.",
+        "explanation": "GELU is a smoothed version of the ReLU activation function and is used in some transformer-based models.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Transformer-based models"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "b7bad041-ccd2-4ce4-bee0-f86959a8b813",
+        "name": "Batch Normalization (BN)",
+        "type": "definition",
+        "definition": "A technique used to normalize the input data for each layer in a neural network.",
+        "explanation": "Batch normalization helps to stabilize the training process and improve the performance of neural networks.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Image classification"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "4d1a0748-8dc9-4401-8c07-8df2bf482182",
+        "name": "Depthwise Separable Convolution",
+        "type": "definition",
+        "definition": "A type of convolutional layer that separates the convolution operation into two steps: depthwise convolution and pointwise convolution.",
+        "explanation": "Depthwise separable convolution is used in some neural network architectures to reduce the number of parameters and improve efficiency.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "MobileNet"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "8a407e45-98fd-4bf1-89b8-2ff4953ffd5d",
+        "name": "Pointwise Convolution",
+        "type": "definition",
+        "definition": "A type of convolutional layer that uses a kernel size of 1x1.",
+        "explanation": "Pointwise convolution is used to combine the features from different channels and is often used in conjunction with depthwise separable convolution.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "MobileNet"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "35a1bb0b-f0c8-447b-980a-6da4433348f5",
+        "name": "Global Average Pooling",
+        "type": "definition",
+        "definition": "A technique used to downsample the feature maps in a neural network.",
+        "explanation": "Global average pooling is used to reduce the spatial dimensions of the feature maps and is often used in conjunction with fully connected layers.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Image classification"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "fc2b7493-2781-4f90-8ad9-8673cac04357",
+        "name": "Fully Connected Layer",
+        "type": "definition",
+        "definition": "A type of neural network layer where every input is connected to every output.",
+        "explanation": "Fully connected layers are used to make predictions based on the features extracted by the convolutional and pooling layers.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Image classification"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "a144b691-038d-4c0e-bb47-4abb78729956",
+        "name": "Softmax Layer",
+        "type": "definition",
+        "definition": "A type of neural network layer used for multi-class classification tasks.",
+        "explanation": "The softmax layer is used to output a probability distribution over the different classes.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Image classification"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "444e2816-2066-4c43-bc35-8300d7bf7de6",
+        "name": "Sparse Categorical Cross-Entropy",
+        "type": "definition",
+        "definition": "A type of loss function used for multi-class classification tasks.",
+        "explanation": "Sparse categorical cross-entropy is used to measure the difference between the predicted probabilities and the true labels.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "23f18e91-ba7d-43d7-bbd6-066a37fd2e9d"
+        ],
+        "examples": [
+          "Image classification"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "0a1f7652-69e5-44bb-8f06-69c0f4e49c3e",
+        "name": "Wasserstein Distance",
+        "type": "definition",
+        "definition": "A measure of the distance between two probability distributions.",
+        "explanation": "The Wasserstein distance is used to measure the similarity between the feature distributions of different modalities.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "663863dc-f953-4c16-9c50-360e7d05d082"
+        ],
+        "examples": [
+          "Multimodal fusion"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "663863dc-f953-4c16-9c50-360e7d05d082",
+        "name": "Ergodic and Stationary Process",
+        "type": "definition",
+        "definition": "A type of stochastic process that is both ergodic and stationary.",
+        "explanation": "Ergodic and stationary processes are used to model the behavior of systems that are both random and stable over time.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Time series analysis"
+        ],
+        "equations": [],
+        "importance_score": 0.3
+      },
+      {
+        "id": "f3bb3b51-8728-48b5-a3d8-ea9b1ff45e13",
+        "name": "Minape Architecture",
+        "type": "definition",
+        "definition": "A novel multimodal isotropic neural architecture that incorporates patch embedding for time series and image data classification.",
+        "explanation": "The Minape architecture consists of two pathways: a visual pathway and a time series pathway, which are merged using a concatenation layer.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Multimodal device state recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "f1c2b365-4cda-47f1-aeea-9b674402113b",
+        "name": "Temporal Convolutional Network",
+        "type": "definition",
+        "definition": "A type of neural network architecture that uses convolutional layers to model temporal dependencies in data.",
+        "explanation": "Temporal convolutional networks are used to model the temporal relationships between different time steps in a sequence.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "23f18e91-ba7d-43d7-bbd6-066a37fd2e9d"
+        ],
+        "examples": [
+          "Time series forecasting"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "6420111c-db2e-4525-855c-cf9ec3cc159e",
+        "name": "Recurrent Neural Layer",
+        "type": "definition",
+        "definition": "A type of neural network layer that uses recurrent connections to model temporal dependencies in data.",
+        "explanation": "Recurrent neural layers are used to model the temporal relationships between different time steps in a sequence.",
+        "difficulty": "advanced",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "23f18e91-ba7d-43d7-bbd6-066a37fd2e9d"
+        ],
+        "examples": [
+          "Time series forecasting"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "0c130c49-e6e4-42ed-b1fc-c9f315140f3d",
+        "name": "Mudestreda Dataset",
+        "type": "definition",
+        "definition": "A multimodal dataset collected from industrial processing devices.",
+        "explanation": "The Mudestreda dataset is used to evaluate the performance of the Minape architecture on multimodal device state recognition tasks.",
+        "difficulty": "intermediate",
+        "paper_id": "f9fe1b16-0538-4492-93b8-01d755eab2ba",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Multimodal device state recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "98cdb66c-9737-41e5-91df-7988e0566836",
+        "target_id": "e45d293d-b5f4-4681-bab2-40365c22ef8f",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "15f2743f-d902-4220-99ab-9bb4e8277c78",
+        "target_id": "4d1a0748-8dc9-4401-8c07-8df2bf482182",
+        "relationship_type": "part_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "15f2743f-d902-4220-99ab-9bb4e8277c78",
+        "target_id": "8a407e45-98fd-4bf1-89b8-2ff4953ffd5d",
+        "relationship_type": "part_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "f3bb3b51-8728-48b5-a3d8-ea9b1ff45e13",
+        "target_id": "e45d293d-b5f4-4681-bab2-40365c22ef8f",
+        "relationship_type": "part_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "32be615e-cf47-4f87-8e86-6d6bcca35be0",
+        "target_id": "87e9b4fb-8b73-40d9-a777-e1d9481b724e",
+        "relationship_type": "related",
+        "strength": 0.8
+      },
+      {
+        "source_id": "1b0f925d-fc84-4613-9cd5-3cf1a0abc349",
+        "target_id": "f3bb3b51-8728-48b5-a3d8-ea9b1ff45e13",
+        "relationship_type": "part_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "98cdb66c-9737-41e5-91df-7988e0566836",
+        "target_id": "f3bb3b51-8728-48b5-a3d8-ea9b1ff45e13",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "f1c2b365-4cda-47f1-aeea-9b674402113b",
+        "target_id": "23f18e91-ba7d-43d7-bbd6-066a37fd2e9d",
+        "relationship_type": "related",
+        "strength": 0.8
+      },
+      {
+        "source_id": "ed219795-92f9-4e69-b592-73e7e0dc5bfa",
+        "target_id": "23f18e91-ba7d-43d7-bbd6-066a37fd2e9d",
+        "relationship_type": "example_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "0586bf7d-f8f2-4149-ba2f-34ac5971f8a8",
+        "target_id": "98cdb66c-9737-41e5-91df-7988e0566836",
+        "relationship_type": "part_of",
+        "strength": 0.6
+      },
+      {
+        "source_id": "b7bad041-ccd2-4ce4-bee0-f86959a8b813",
+        "target_id": "15f2743f-d902-4220-99ab-9bb4e8277c78",
+        "relationship_type": "part_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "35a1bb0b-f0c8-447b-980a-6da4433348f5",
+        "target_id": "15f2743f-d902-4220-99ab-9bb4e8277c78",
+        "relationship_type": "part_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "fc2b7493-2781-4f90-8ad9-8673cac04357",
+        "target_id": "15f2743f-d902-4220-99ab-9bb4e8277c78",
+        "relationship_type": "part_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "a144b691-038d-4c0e-bb47-4abb78729956",
+        "target_id": "15f2743f-d902-4220-99ab-9bb4e8277c78",
+        "relationship_type": "part_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "444e2816-2066-4c43-bc35-8300d7bf7de6",
+        "target_id": "23f18e91-ba7d-43d7-bbd6-066a37fd2e9d",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "0a1f7652-69e5-44bb-8f06-69c0f4e49c3e",
+        "target_id": "663863dc-f953-4c16-9c50-360e7d05d082",
+        "relationship_type": "related",
+        "strength": 0.5
+      },
+      {
+        "source_id": "0c130c49-e6e4-42ed-b1fc-c9f315140f3d",
+        "target_id": "32be615e-cf47-4f87-8e86-6d6bcca35be0",
+        "relationship_type": "example_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "6420111c-db2e-4525-855c-cf9ec3cc159e",
+        "target_id": "23f18e91-ba7d-43d7-bbd6-066a37fd2e9d",
+        "relationship_type": "related",
+        "strength": 0.6
+      }
+    ],
+    "num_concepts": 23,
+    "num_edges": 18,
+    "complexity_score": 0.5748221343873519
+  },
+  "37f45260-f07b-4a8d-82ec-208c7e02b152": {
+    "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+    "concepts": [
+      {
+        "id": "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5",
+        "name": "Patch Embedding",
+        "type": "definition",
+        "definition": "A technique used to handle larger image sizes and mitigate the quadratic runtime of self-attention layers in Transformers.",
+        "explanation": "Patch embedding is a method that allows for the efficient processing of large images by dividing them into smaller patches, which are then embedded into a lower-dimensional space. This enables the model to capture global dependencies and relationships between patches, leading to improved image understanding and analysis.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Vision Transformer (ViT)"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "77f77674-44cb-4396-88a4-98c273446a30",
+        "name": "Multimodal Learning",
+        "type": "definition",
+        "definition": "A subfield of machine learning that involves the integration of multiple modalities, such as vision, hearing, and text, to improve the performance of a model.",
+        "explanation": "Multimodal learning aims to leverage the complementary information from different modalities to enhance the robustness and accuracy of a model. This is particularly useful in applications where a single modality is not sufficient to capture the underlying patterns and relationships.",
+        "difficulty": "advanced",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Action recognition",
+          "Semantic segmentation"
+        ],
+        "equations": [],
+        "importance_score": 0.9
+      },
+      {
+        "id": "4b3030a2-8173-46ff-80a1-b2f5b26f526c",
+        "name": "Isotropic Convolutional Neural Architecture",
+        "type": "definition",
+        "definition": "A type of neural network architecture that uses isotropic convolutional layers to process input data.",
+        "explanation": "Isotropic convolutional neural architectures are designed to handle inputs of varying sizes and aspect ratios, making them suitable for applications where the input data has different dimensions. They are also computationally efficient and require fewer parameters than other architectures.",
+        "difficulty": "advanced",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "name": "Minape",
+        "type": "definition",
+        "definition": "A novel multimodal isotropic neural architecture that incorporates patch embedding to integrate time series and image data for classification purposes.",
+        "explanation": "Minape is a lightweight and efficient architecture that uses a two-pathway convolutional-based model to extract features from visual and time-series data. It then merges the features using a concatenation layer and passes the output to a temporal convolutional network to model temporal dependencies.",
+        "difficulty": "advanced",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Device state recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.9
+      },
+      {
+        "id": "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198",
+        "name": "Transformer-based Models",
+        "type": "definition",
+        "definition": "A type of neural network architecture that uses self-attention mechanisms to process input data.",
+        "explanation": "Transformer-based models are widely used in natural language processing and computer vision tasks. They are particularly useful for tasks that require the modeling of long-range dependencies and relationships between input elements.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Vision Transformer (ViT)"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "92de2574-35e1-4ff4-8d92-6e2112273824",
+        "name": "Convolutional Neural Networks (CNNs)",
+        "type": "definition",
+        "definition": "A type of neural network architecture that uses convolutional and pooling layers to process input data.",
+        "explanation": "CNNs are widely used in computer vision tasks, such as image classification, object detection, and segmentation. They are particularly useful for tasks that require the extraction of features from images.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "4b3030a2-8173-46ff-80a1-b2f5b26f526c"
+        ],
+        "examples": [
+          "Image classification"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "8a60f1ad-7e64-4869-bdcd-2ef725319ba9",
+        "name": "Time Series Data",
+        "type": "definition",
+        "definition": "A type of data that consists of a sequence of values measured at regular time intervals.",
+        "explanation": "Time series data is widely used in applications such as finance, weather forecasting, and traffic prediction. It requires specialized models that can capture temporal dependencies and patterns.",
+        "difficulty": "beginner",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Stock prices"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "a6bbd516-abfc-4369-976d-110d77f9d55c",
+        "name": "Image Data",
+        "type": "definition",
+        "definition": "A type of data that consists of a set of pixels with color values.",
+        "explanation": "Image data is widely used in applications such as computer vision, robotics, and healthcare. It requires specialized models that can extract features from images.",
+        "difficulty": "beginner",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Object detection"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "71e64324-05a9-4489-8c34-18cbec19aee3",
+        "name": "Multimodal Fusion",
+        "type": "definition",
+        "definition": "A technique used to combine the features from multiple modalities to improve the performance of a model.",
+        "explanation": "Multimodal fusion is a critical component of multimodal learning, as it allows the model to leverage the complementary information from different modalities. There are various fusion techniques, including early fusion, late fusion, and intermediate fusion.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [
+          "77f77674-44cb-4396-88a4-98c273446a30"
+        ],
+        "related_concepts": [],
+        "examples": [
+          "Action recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "125fa789-5245-4a70-9d18-0f86482a1765",
+        "name": "Deep Concatenation",
+        "type": "definition",
+        "definition": "A technique used to combine the features from multiple modalities by concatenating the latent spaces of the linearly embedded representations.",
+        "explanation": "Deep concatenation is a simple yet effective technique for multimodal fusion. It allows the model to capture the relationships between the features from different modalities and improve the overall performance.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "71e64324-05a9-4489-8c34-18cbec19aee3"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "1569b6c2-c240-4470-924f-964d6df2c033",
+        "name": "Temporal Convolutional Network",
+        "type": "definition",
+        "definition": "A type of neural network architecture that uses convolutional layers to model temporal dependencies in time series data.",
+        "explanation": "Temporal convolutional networks are widely used in applications such as speech recognition, natural language processing, and time series forecasting. They are particularly useful for tasks that require the modeling of temporal relationships between input elements.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Speech recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "264aab35-978f-434a-9be6-d2ae140c1691",
+        "name": "Gaussian Error Linear Unit (GELU)",
+        "type": "definition",
+        "definition": "A type of activation function that applies nonlinearity to the input by weighting it by its percentile.",
+        "explanation": "GELU is a smoothed version of the ReLU activation function, which is widely used in deep neural networks. It is particularly useful for tasks that require the modeling of complex relationships between input elements.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "2b6f1e73-7bb1-4d2b-8d50-297e49c92bf1",
+        "name": "Batch Normalization",
+        "type": "definition",
+        "definition": "A technique used to normalize the input data for each layer in a neural network.",
+        "explanation": "Batch normalization is widely used in deep neural networks to improve the stability and speed of training. It helps to reduce the internal covariate shift and improve the overall performance of the model.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Image classification"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "6a4c7cda-2ff1-42b1-b751-e31be4b05a73",
+        "name": "Channel-Point Convolutional Block",
+        "type": "definition",
+        "definition": "A type of convolutional block that consists of a sequence of grouped convolutions and pointwise convolutions with a skip connection.",
+        "explanation": "Channel-point convolutional blocks are widely used in deep neural networks to improve the efficiency and accuracy of the model. They allow for the modeling of complex relationships between input elements and improve the overall performance.",
+        "difficulty": "advanced",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "8eab4ce0-38df-43ca-a762-02d493f3f7ae",
+        "name": "Depthwise Convolution",
+        "type": "definition",
+        "definition": "A type of convolution that performs a convolution operation on each channel separately.",
+        "explanation": "Depthwise convolution is widely used in deep neural networks to improve the efficiency and accuracy of the model. It allows for the modeling of complex relationships between input elements and improves the overall performance.",
+        "difficulty": "advanced",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "a6f471f1-1969-4c7b-ba2c-021f905403b2",
+        "name": "Pointwise Convolution",
+        "type": "definition",
+        "definition": "A type of convolution that performs a convolution operation with a kernel size of 1x1.",
+        "explanation": "Pointwise convolution is widely used in deep neural networks to improve the efficiency and accuracy of the model. It allows for the modeling of complex relationships between input elements and improves the overall performance.",
+        "difficulty": "advanced",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "65d1c736-9f64-4033-9a64-b83c4d78f9ae",
+        "name": "Global Average Pooling",
+        "type": "definition",
+        "definition": "A technique used to downsample the input data by calculating the average of the vertical and horizontal dimensions.",
+        "explanation": "Global average pooling is widely used in deep neural networks to improve the efficiency and accuracy of the model. It helps to reduce the spatial dimensions of the input data and improve the overall performance.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Image classification"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "d5effeaf-df1c-436c-af78-c1736713d6d5",
+        "name": "Sparse Categorical Cross-Entropy",
+        "type": "definition",
+        "definition": "A type of loss function used for multi-class classification problems.",
+        "explanation": "Sparse categorical cross-entropy is widely used in deep neural networks to improve the accuracy and efficiency of the model. It helps to reduce the loss function and improve the overall performance.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "5839514d-11bc-4926-9d10-76ce177b4b37",
+        "name": "Wasserstein Distance",
+        "type": "definition",
+        "definition": "A measure of the distance between two probability distributions.",
+        "explanation": "Wasserstein distance is widely used in deep neural networks to improve the efficiency and accuracy of the model. It helps to reduce the distance between the input and output distributions and improve the overall performance.",
+        "difficulty": "advanced",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "a34c4502-d2db-4fba-baa7-54252121e68c",
+        "name": "Ergodic and Stationary Process",
+        "type": "definition",
+        "definition": "A type of stochastic process that is both ergodic and stationary.",
+        "explanation": "Ergodic and stationary processes are widely used in deep neural networks to improve the efficiency and accuracy of the model. They help to reduce the complexity of the input data and improve the overall performance.",
+        "difficulty": "advanced",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "8a60f1ad-7e64-4869-bdcd-2ef725319ba9"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "971f287d-5f86-4392-a4b9-73bc7a09eaa0",
+        "name": "Multimodal Dataset",
+        "type": "definition",
+        "definition": "A type of dataset that consists of multiple modalities, such as vision, hearing, and text.",
+        "explanation": "Multimodal datasets are widely used in deep neural networks to improve the efficiency and accuracy of the model. They help to capture the relationships between different modalities and improve the overall performance.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Mudestreda"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "2169e03a-b954-40ba-984a-dd6d637bee44",
+        "name": "Device State Recognition",
+        "type": "definition",
+        "definition": "A type of task that involves recognizing the state of a device based on its sensor readings.",
+        "explanation": "Device state recognition is a critical task in many applications, such as industrial automation and healthcare. It requires the use of machine learning models that can capture the relationships between the sensor readings and the device state.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "91cce2b5-e713-4b29-8398-3163ef922994",
+        "name": "Intelligent Production",
+        "type": "definition",
+        "definition": "A type of application that involves the use of machine learning models to improve the efficiency and accuracy of production processes.",
+        "explanation": "Intelligent production is a critical application in many industries, such as manufacturing and logistics. It requires the use of machine learning models that can capture the relationships between the production processes and the output quality.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "b2ff02c4-9522-45a7-a4e8-d463ecee8c2d",
+        "name": "Healthcare Systems",
+        "type": "definition",
+        "definition": "A type of application that involves the use of machine learning models to improve the efficiency and accuracy of healthcare services.",
+        "explanation": "Healthcare systems are a critical application in many industries, such as medical diagnosis and patient care. They require the use of machine learning models that can capture the relationships between the patient data and the diagnosis or treatment outcomes.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "f81a6b1f-e2e2-4e1c-8239-32b182156cb9",
+        "name": "Real-Time Monitoring",
+        "type": "definition",
+        "definition": "A type of application that involves the use of machine learning models to monitor the state of a system in real-time.",
+        "explanation": "Real-time monitoring is a critical application in many industries, such as industrial automation and finance. It requires the use of machine learning models that can capture the relationships between the system state and the output quality.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+        ],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "90eb0180-ba71-43cf-993a-c177d8d7c2e9",
+        "name": "Mudestreda Dataset",
+        "type": "definition",
+        "definition": "A type of multimodal dataset that consists of time series and image data from industrial processing devices.",
+        "explanation": "Mudestreda dataset is a critical resource for developing and evaluating machine learning models for device state recognition and intelligent production. It provides a comprehensive set of sensor readings and device states that can be used to train and test machine learning models.",
+        "difficulty": "intermediate",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Minape"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198",
+        "target_id": "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "92de2574-35e1-4ff4-8d92-6e2112273824",
+        "target_id": "4b3030a2-8173-46ff-80a1-b2f5b26f526c",
+        "relationship_type": "related",
+        "strength": 0.7
+      },
+      {
+        "source_id": "77f77674-44cb-4396-88a4-98c273446a30",
+        "target_id": "71e64324-05a9-4489-8c34-18cbec19aee3",
+        "relationship_type": "prerequisite",
+        "strength": 0.9
+      },
+      {
+        "source_id": "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "8a60f1ad-7e64-4869-bdcd-2ef725319ba9",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "a6bbd516-abfc-4369-976d-110d77f9d55c",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "971f287d-5f86-4392-a4b9-73bc7a09eaa0",
+        "target_id": "90eb0180-ba71-43cf-993a-c177d8d7c2e9",
+        "relationship_type": "example_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "125fa789-5245-4a70-9d18-0f86482a1765",
+        "target_id": "71e64324-05a9-4489-8c34-18cbec19aee3",
+        "relationship_type": "related",
+        "strength": 0.5
+      },
+      {
+        "source_id": "1569b6c2-c240-4470-924f-964d6df2c033",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "part_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "6a4c7cda-2ff1-42b1-b751-e31be4b05a73",
+        "target_id": "4b3030a2-8173-46ff-80a1-b2f5b26f526c",
+        "relationship_type": "part_of",
+        "strength": 0.6
+      },
+      {
+        "source_id": "264aab35-978f-434a-9be6-d2ae140c1691",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.4
+      },
+      {
+        "source_id": "2b6f1e73-7bb1-4d2b-8d50-297e49c92bf1",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.4
+      },
+      {
+        "source_id": "65d1c736-9f64-4033-9a64-b83c4d78f9ae",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.4
+      },
+      {
+        "source_id": "d5effeaf-df1c-436c-af78-c1736713d6d5",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.4
+      },
+      {
+        "source_id": "5839514d-11bc-4926-9d10-76ce177b4b37",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.4
+      },
+      {
+        "source_id": "a34c4502-d2db-4fba-baa7-54252121e68c",
+        "target_id": "8a60f1ad-7e64-4869-bdcd-2ef725319ba9",
+        "relationship_type": "related",
+        "strength": 0.5
+      },
+      {
+        "source_id": "2169e03a-b954-40ba-984a-dd6d637bee44",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "91cce2b5-e713-4b29-8398-3163ef922994",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "b2ff02c4-9522-45a7-a4e8-d463ecee8c2d",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "f81a6b1f-e2e2-4e1c-8239-32b182156cb9",
+        "target_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "relationship_type": "related",
+        "strength": 0.6
+      }
+    ],
+    "num_concepts": 26,
+    "num_edges": 20,
+    "complexity_score": 0.5584615384615385
+  }
+}

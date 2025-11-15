@@ -1,0 +1,275 @@
+{
+  "5fef057f-bf66-45d3-a6bd-1a1353324156_37f45260-f07b-4a8d-82ec-208c7e02b152": {
+    "user_id": "5fef057f-bf66-45d3-a6bd-1a1353324156",
+    "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+    "completion_percentage": 3,
+    "total_study_time": 0,
+    "concepts_mastery": [
+      {
+        "concept_id": "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5",
+        "concept_name": "Patch Embedding",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 1,
+        "times_quizzed": 1,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "77f77674-44cb-4396-88a4-98c273446a30",
+        "concept_name": "Multimodal Learning",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 1,
+        "times_quizzed": 1,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "4b3030a2-8173-46ff-80a1-b2f5b26f526c",
+        "concept_name": "Isotropic Convolutional Neural Architecture",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 1.0,
+        "times_reviewed": 1,
+        "times_quizzed": 1,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
+        "concept_name": "Minape",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 1,
+        "times_quizzed": 1,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198",
+        "concept_name": "Transformer-based Models",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 1,
+        "times_quizzed": 1,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "92de2574-35e1-4ff4-8d92-6e2112273824",
+        "concept_name": "Convolutional Neural Networks (CNNs)",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "8a60f1ad-7e64-4869-bdcd-2ef725319ba9",
+        "concept_name": "Time Series Data",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "a6bbd516-abfc-4369-976d-110d77f9d55c",
+        "concept_name": "Image Data",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "71e64324-05a9-4489-8c34-18cbec19aee3",
+        "concept_name": "Multimodal Fusion",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "125fa789-5245-4a70-9d18-0f86482a1765",
+        "concept_name": "Deep Concatenation",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "1569b6c2-c240-4470-924f-964d6df2c033",
+        "concept_name": "Temporal Convolutional Network",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "264aab35-978f-434a-9be6-d2ae140c1691",
+        "concept_name": "Gaussian Error Linear Unit (GELU)",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "2b6f1e73-7bb1-4d2b-8d50-297e49c92bf1",
+        "concept_name": "Batch Normalization",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "6a4c7cda-2ff1-42b1-b751-e31be4b05a73",
+        "concept_name": "Channel-Point Convolutional Block",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "8eab4ce0-38df-43ca-a762-02d493f3f7ae",
+        "concept_name": "Depthwise Convolution",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "a6f471f1-1969-4c7b-ba2c-021f905403b2",
+        "concept_name": "Pointwise Convolution",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "65d1c736-9f64-4033-9a64-b83c4d78f9ae",
+        "concept_name": "Global Average Pooling",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "d5effeaf-df1c-436c-af78-c1736713d6d5",
+        "concept_name": "Sparse Categorical Cross-Entropy",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "5839514d-11bc-4926-9d10-76ce177b4b37",
+        "concept_name": "Wasserstein Distance",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "a34c4502-d2db-4fba-baa7-54252121e68c",
+        "concept_name": "Ergodic and Stationary Process",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "971f287d-5f86-4392-a4b9-73bc7a09eaa0",
+        "concept_name": "Multimodal Dataset",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "2169e03a-b954-40ba-984a-dd6d637bee44",
+        "concept_name": "Device State Recognition",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "91cce2b5-e713-4b29-8398-3163ef922994",
+        "concept_name": "Intelligent Production",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "b2ff02c4-9522-45a7-a4e8-d463ecee8c2d",
+        "concept_name": "Healthcare Systems",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "f81a6b1f-e2e2-4e1c-8239-32b182156cb9",
+        "concept_name": "Real-Time Monitoring",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      },
+      {
+        "concept_id": "90eb0180-ba71-43cf-993a-c177d8d7c2e9",
+        "concept_name": "Mudestreda Dataset",
+        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "mastery_level": 0.0,
+        "times_reviewed": 0,
+        "times_quizzed": 0,
+        "last_reviewed": null,
+        "first_encountered": "2025-11-15T08:56:39.472980"
+      }
+    ],
+    "quiz_attempts": 1,
+    "average_quiz_score": 20.0,
+    "questions_asked": 0,
+    "last_studied": null,
+    "started_at": "2025-11-15T08:56:39.466270"
+  }
+}

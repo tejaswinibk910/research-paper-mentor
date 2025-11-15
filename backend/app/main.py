@@ -30,7 +30,7 @@ async def lifespan(app: FastAPI):
         try:
             (loaded_papers, loaded_summaries, loaded_concepts,
              loaded_chats, loaded_quizzes, loaded_results,
-             loaded_understandings) = load_all_databases()
+             loaded_progress) = load_all_databases()
             
             # Restore data to in-memory databases
             if loaded_papers:
@@ -51,9 +51,9 @@ async def lifespan(app: FastAPI):
             if loaded_results:
                 quiz.quiz_results_db.update(loaded_results)
                 print(f"   Loaded {len(loaded_results)} quiz results")
-            if loaded_understandings:
-                progress.concept_understandings_db.update(loaded_understandings)
-                print(f"   Loaded {len(loaded_understandings)} concept understandings")
+            if loaded_progress:
+                progress.user_progress_db.update(loaded_progress)
+                print(f"   Loaded {len(loaded_progress)} user progress records")
             
             print("✅ Data restored successfully")
         except Exception as e:
@@ -78,7 +78,7 @@ async def lifespan(app: FastAPI):
                 chat.chat_sessions_db,
                 quiz.quizzes_db,
                 quiz.quiz_results_db,
-                progress.concept_understandings_db
+                progress.user_progress_db  # FIXED: was concept_understandings_db
             )
             print("✅ Data saved successfully")
         except Exception as e:
@@ -150,7 +150,7 @@ if PERSISTENCE_ENABLED:
                 chat.chat_sessions_db,
                 quiz.quizzes_db,
                 quiz.quiz_results_db,
-                progress.concept_understandings_db
+                progress.user_progress_db  # FIXED: was concept_understandings_db
             )
             return {"message": "Data saved successfully"}
         except Exception as e:
