@@ -1,0 +1,59 @@
+node_modules/
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environment
+venv/
+ENV/
+env/
+
+# Byte-compiled C extensions
+*.so
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+*.env
+.env
+.env.local
+.env.*.local
+
+# -------------------------
+# Databases & Storage
+# -------------------------
+*.db
+*.sqlite
+*.sqlite3
+backend/research_mentor.db
+backend/chroma_db/
+backend/uploads/
+
+# -------------------------
+# Build / Packaging
+# -------------------------
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# -------------------------
+# OS / Editor Junk
+# -------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# -------------------------
+# Project-specific
+# -------------------------
+backend/app.zip
+dir_structure.txt

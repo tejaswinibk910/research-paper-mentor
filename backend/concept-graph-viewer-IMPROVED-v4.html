@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper Concept Graph Viewer - Enhanced</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            overflow: hidden;
+        }
+
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #00d4ff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #graph-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: radial-gradient(ellipse at center, #16213e 0%, #0f1419 100%);
+        }
+
+        .input-panel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            text-align: center;
+            min-width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .input-panel h1 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 32px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .input-panel p {
+            color: #a8b8d8;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+        }
+
+        .btn-primary:disabled {
+            background: #555;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .error-message {
+            background: rgba(255, 68, 68, 0.2);
+            color: #ff6b6b;
+            padding: 14px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 13px;
+            display: none;
+            border: 1px solid rgba(255, 68, 68, 0.3);
+        }
+
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(30, 60, 114, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            max-width: 380px;
+            z-index: 100;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-panel h2 {
+            margin: 0 0 15px 0;
+            color: #00d4ff;
+            font-size: 22px;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .info-panel p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #e0e0e0;
+        }
+
+        .info-panel .paper-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .info-panel strong {
+            color: #00d4ff;
+        }
+
+        .legend {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 60, 114, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            min-width: 200px;
+        }
+
+        .legend h3 {
+            margin: 0 0 15px 0;
+            color: #00d4ff;
+            font-size: 18px;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .legend-section {
+            margin-bottom: 20px;
+        }
+
+        .legend-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .legend-section h4 {
+            color: #a8b8d8;
+            font-size: 12px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 13px;
+            color: #e0e0e0;
+            padding: 4px 0;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30, 60, 114, 0.95);
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+            display: none;
+            gap: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: white;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 0 5px;
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+        }
+
+        .controls button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.5);
+        }
+
+        .zoom-controls {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .zoom-controls button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zoom-controls button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+        }
+
+        .zoom-controls button:active {
+            transform: scale(0.95);
+        }
+
+        .help-text {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30, 60, 114, 0.9);
+            color: #a8b8d8;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 12px;
+            z-index: 99;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .help-text span {
+            color: #00d4ff;
+            font-weight: 600;
+        }
+
+        .node {
+            cursor: pointer;
+            transition: all 0.3s;
+            stroke: rgba(255, 255, 255, 0.3);
+            stroke-width: 2px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .node:hover {
+            stroke: #00d4ff;
+            stroke-width: 4px;
+            filter: drop-shadow(0 4px 12px rgba(0, 212, 255, 0.8));
+        }
+
+        .node.selected {
+            stroke: #00d4ff;
+            stroke-width: 5px;
+            filter: drop-shadow(0 6px 20px rgba(0, 212, 255, 1));
+        }
+
+        .node-label {
+            font-size: 12px;
+            font-weight: 700;
+            pointer-events: none;
+            fill: white;
+            text-shadow: 
+                0 0 3px rgba(0, 0, 0, 0.8),
+                0 0 6px rgba(0, 0, 0, 0.6),
+                -1px -1px 2px rgba(0, 0, 0, 0.8),
+                1px -1px 2px rgba(0, 0, 0, 0.8),
+                -1px 1px 2px rgba(0, 0, 0, 0.8),
+                1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .link {
+            stroke: rgba(255, 255, 255, 0.15);
+            stroke-opacity: 0.6;
+            transition: all 0.3s;
+        }
+
+        .link:hover {
+            stroke: #00d4ff;
+            stroke-opacity: 1;
+        }
+
+        .link.highlighted {
+            stroke: #00d4ff;
+            stroke-opacity: 1;
+            stroke-width: 3px;
+            filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.8));
+        }
+
+        .link-prerequisite { stroke: #ff6b6b; }
+        .link-related { stroke: #4ecdc4; }
+        .link-part_of { stroke: #ffd93d; }
+        .link-example_of { stroke: #95e1d3; }
+
+        .difficulty-beginner { fill: #4ecdc4; }
+        .difficulty-intermediate { fill: #ffd93d; }
+        .difficulty-advanced { fill: #ff6b6b; }
+
+        /* Remove type colors from nodes - they were overriding difficulty colors */
+
+        .tooltip {
+            position: absolute;
+            background: rgba(20, 30, 48, 0.98);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            max-width: 350px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .tooltip h4 {
+            margin: 0 0 10px 0;
+            color: #00d4ff;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+        }
+
+        .tooltip p {
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+
+        .tooltip strong {
+            color: #00d4ff;
+        }
+
+        .detail-panel {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(30, 60, 114, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            max-width: 400px;
+            z-index: 100;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .detail-panel h3 {
+            color: #00d4ff;
+            margin: 0 0 15px 0;
+            font-size: 20px;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .detail-panel p {
+            color: #e0e0e0;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .detail-panel .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .detail-panel .close-btn:hover {
+            background: rgba(255, 68, 68, 0.5);
+            transform: rotate(90deg);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 4px 4px 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-difficulty { background: rgba(255, 215, 0, 0.2); color: #ffd700; }
+        .badge-type { background: rgba(0, 212, 255, 0.2); color: #00d4ff; }
+        .badge-importance { background: rgba(255, 107, 107, 0.2); color: #ff6b6b; }
+
+        .filter-panel {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30, 60, 114, 0.95);
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-panel select {
+            background: #1a1a2e;
+            color: white;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 0 8px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-right: 35px;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 20px;
+        }
+
+        .filter-panel select:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background-color: #252540;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .filter-panel select option {
+            background: #1a1a2e;
+            color: white;
+            padding: 10px;
+        }
+
+        .filter-panel label {
+            color: #e0e0e0;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 212, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 212, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <p id="loader-text">Loading...</p>
+    </div>
+
+    <div id="graph-container">
+        <div id="input-panel" class="input-panel">
+            <h1>Concept Graph Viewer</h1>
+            <p>Visualize the knowledge structure of research papers</p>
+            
+            <div class="input-group">
+                <label for="api-url">API URL</label>
+                <input type="text" id="api-url" placeholder="http://localhost:8000" value="http://localhost:8000">
+            </div>
+            
+            <div class="input-group">
+                <label for="paper-id">Paper ID</label>
+                <input type="text" id="paper-id" placeholder="Enter paper UUID">
+            </div>
+            
+            <button class="btn-primary" onclick="loadGraph()">Load Graph</button>
+            
+            <div id="error-message" class="error-message"></div>
+        </div>
+
+        <div id="info-panel" class="info-panel">
+            <h2>Paper Information</h2>
+            <p class="paper-title" id="paper-title">-</p>
+            <p><strong>Concepts:</strong> <span id="concept-count">0</span></p>
+            <p><strong>Relationships:</strong> <span id="edge-count">0</span></p>
+            <p><strong>Complexity:</strong> <span id="complexity-score">0</span></p>
+        </div>
+
+        <div id="legend" class="legend">
+            <h3>Legend</h3>
+            
+            <div class="legend-section">
+                <h4>Node Size</h4>
+                <p style="color: #e0e0e0; font-size: 12px; margin: 8px 0; line-height: 1.5;">
+                    Larger nodes = Higher importance score
+                </p>
+            </div>
+            
+            <div class="legend-section">
+                <h4>Difficulty (Node Color)</h4>
+                <div class="legend-item">
+                    <div class="legend-color difficulty-beginner"></div>
+                    <span>Beginner</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color difficulty-intermediate"></div>
+                    <span>Intermediate</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color difficulty-advanced"></div>
+                    <span>Advanced</span>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <h4>Concept Types</h4>
+                <p style="color: #a8b8d8; font-size: 11px; margin: 8px 0 12px 0; line-height: 1.4;">
+                    Types shown in tooltips and detail panel
+                </p>
+            </div>
+
+            <div class="legend-section">
+                <h4>Relationships</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ff6b6b;"></div>
+                    <span>Prerequisite</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4ecdc4;"></div>
+                    <span>Related</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ffd93d;"></div>
+                    <span>Part Of</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #95e1d3;"></div>
+                    <span>Example Of</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="filter-panel" class="filter-panel">
+            <label>Difficulty:</label>
+            <select id="difficulty-filter" onchange="applyFilters()">
+                <option value="all">All</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+            
+            <label>Type:</label>
+            <select id="type-filter" onchange="applyFilters()">
+                <option value="all">All</option>
+                <option value="definition">Definition</option>
+                <option value="theory">Theory</option>
+                <option value="equation">Equation</option>
+                <option value="method">Method</option>
+                <option value="result">Result</option>
+                <option value="term">Term</option>
+            </select>
+        </div>
+
+        <div id="controls" class="controls">
+            <button onclick="resetZoom()">Reset View</button>
+            <button onclick="centerGraph()">Center</button>
+            <button onclick="togglePhysics()">Toggle Physics</button>
+            <button onclick="exportGraph()">Export SVG</button>
+            <button onclick="showInputPanel()">New Paper</button>
+        </div>
+
+        <div id="zoom-controls" class="zoom-controls">
+            <button onclick="zoomIn()" title="Zoom In">+</button>
+            <button onclick="zoomOut()" title="Zoom Out">−</button>
+            <button onclick="resetZoom()" title="Reset Zoom" style="font-size: 20px;">⊙</button>
+        </div>
+
+        <div id="help-text" class="help-text">
+            <span>Scroll</span> to zoom • <span>Drag</span> to pan • <span>+/-</span> keys to zoom • <span>0</span> to reset • <span>Esc</span> to deselect
+        </div>
+
+        <div id="detail-panel" class="detail-panel">
+            <button class="close-btn" onclick="hideDetailPanel()">×</button>
+            <h3 id="detail-name">Concept Name</h3>
+            <div id="detail-badges"></div>
+            <p><strong>Definition:</strong></p>
+            <p id="detail-definition"></p>
+            <p><strong>Explanation:</strong></p>
+            <p id="detail-explanation"></p>
+        </div>
+    </div>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script>
+        let svg, g, simulation, zoom;
+        let currentData = null;
+        let currentPaperId = null;
+        let apiUrl = 'http://localhost:8000';
+        let physicsEnabled = true;
+        let selectedNode = null;
+
+        hideLoader();
+
+        async function loadGraph() {
+            const paperId = document.getElementById('paper-id').value.trim();
+            const apiUrlInput = document.getElementById('api-url').value.trim();
+            
+            if (!paperId) {
+                showError('Please enter a Paper ID');
+                return;
+            }
+            
+            apiUrl = apiUrlInput || 'http://localhost:8000';
+            currentPaperId = paperId;
+            
+            showLoader('Loading concept graph...');
+            hideError();
+            
+            try {
+                const paperResponse = await fetch(`${apiUrl}/api/${paperId}`);
+                if (!paperResponse.ok) {
+                    throw new Error(`Paper not found (${paperResponse.status})`);
+                }
+                const paperData = await paperResponse.json();
+                
+                if (paperData.status !== 'ready') {
+                    throw new Error(`Paper is still processing (status: ${paperData.status}). Please wait and try again.`);
+                }
+                
+                const conceptsResponse = await fetch(`${apiUrl}/api/${paperId}/concepts`);
+                if (!conceptsResponse.ok) {
+                    throw new Error(`Failed to load concepts (${conceptsResponse.status})`);
+                }
+                const conceptsData = await conceptsResponse.json();
+                
+                hideLoader();
+                
+                currentData = {
+                    paper: paperData,
+                    concepts: conceptsData
+                };
+                
+                document.getElementById('input-panel').style.display = 'none';
+                document.getElementById('info-panel').style.display = 'block';
+                document.getElementById('legend').style.display = 'block';
+                document.getElementById('controls').style.display = 'flex';
+                document.getElementById('filter-panel').style.display = 'block';
+                document.getElementById('zoom-controls').style.display = 'flex';
+                document.getElementById('help-text').style.display = 'block';
+                
+                document.getElementById('paper-title').textContent = paperData.metadata?.title || paperData.filename;
+                document.getElementById('concept-count').textContent = conceptsData.num_concepts;
+                document.getElementById('edge-count').textContent = conceptsData.num_edges;
+                document.getElementById('complexity-score').textContent = conceptsData.complexity_score.toFixed(2);
+                
+                renderGraph(conceptsData);
+                
+            } catch (error) {
+                hideLoader();
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        function renderGraph(data) {
+            d3.select('#graph-container svg').remove();
+            
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            
+            svg = d3.select('#graph-container')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            zoom = d3.zoom()
+                .scaleExtent([0.2, 8])
+                .on('zoom', (event) => {
+                    g.attr('transform', event.transform);
+                });
+            
+            svg.call(zoom);
+            
+            g = svg.append('g');
+            
+            const nodes = data.concepts.map(c => ({
+                id: c.id,
+                name: c.name,
+                type: c.type,
+                difficulty: c.difficulty,
+                importance: c.importance_score,
+                definition: c.definition,
+                explanation: c.explanation,
+                examples: c.examples || [],
+                equations: c.equations || []
+            }));
+            
+            const links = data.edges.map(e => ({
+                source: e.source_id,
+                target: e.target_id,
+                type: e.relationship_type,
+                strength: e.strength
+            }));
+            
+            simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id).distance(d => 150 + (1 - d.strength) * 100))
+                .force('charge', d3.forceManyBody().strength(-600))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide().radius(d => 20 + (d.importance * 30)));
+            
+            const link = g.append('g')
+                .selectAll('line')
+                .data(links)
+                .enter()
+                .append('line')
+                .attr('class', d => `link link-${d.type}`)
+                .attr('stroke-width', d => 1 + Math.sqrt(d.strength) * 2)
+                .on('mouseover', function(event, d) {
+                    d3.select(this).classed('highlighted', true);
+                    showTooltip(event, `
+                        <h4>${d.type.replace('_', ' ').toUpperCase()}</h4>
+                        <p><strong>Strength:</strong> ${d.strength.toFixed(2)}</p>
+                    `);
+                })
+                .on('mouseout', function() {
+                    d3.select(this).classed('highlighted', false);
+                    hideTooltip();
+                });
+            
+            const node = g.append('g')
+                .selectAll('circle')
+                .data(nodes)
+                .enter()
+                .append('circle')
+                .attr('class', d => `node difficulty-${d.difficulty} type-${d.type}`)
+                .attr('r', d => 15 + (d.importance * 25))
+                .call(drag(simulation))
+                .on('mouseover', function(event, d) {
+                    if (selectedNode !== d) {
+                        d3.select(this).raise();
+                        highlightConnections(d);
+                        showTooltip(event, `
+                            <h4>${d.name}</h4>
+                            <p><strong>Type:</strong> ${d.type}</p>
+                            <p><strong>Difficulty:</strong> ${d.difficulty}</p>
+                            <p><strong>Importance:</strong> ${d.importance.toFixed(2)}</p>
+                            <p style="margin-top: 8px;">${d.definition}</p>
+                        `);
+                    }
+                })
+                .on('mouseout', function(event, d) {
+                    if (selectedNode !== d) {
+                        clearHighlights();
+                        hideTooltip();
+                    }
+                })
+                .on('click', function(event, d) {
+                    event.stopPropagation();
+                    selectNode(d);
+                    showDetailPanel(d);
+                });
+            
+            const label = g.append('g')
+                .selectAll('text')
+                .data(nodes)
+                .enter()
+                .append('text')
+                .attr('class', 'node-label')
+                .text(d => d.name.length > 20 ? d.name.substring(0, 20) + '...' : d.name)
+                .attr('text-anchor', 'middle')
+                .attr('dy', d => -(15 + (d.importance * 25) + 8));
+            
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                
+                node
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+                
+                label
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y);
+            });
+
+            svg.on('click', () => {
+                if (selectedNode) {
+                    clearSelection();
+                    hideDetailPanel();
+                }
+            });
+        }
+
+        function drag(simulation) {
+            function dragstarted(event) {
+                if (!event.active && physicsEnabled) simulation.alphaTarget(0.3).restart();
+                event.subject.fx = event.subject.x;
+                event.subject.fy = event.subject.y;
+            }
+            
+            function dragged(event) {
+                event.subject.fx = event.x;
+                event.subject.fy = event.y;
+            }
+            
+            function dragended(event) {
+                if (!event.active && physicsEnabled) simulation.alphaTarget(0);
+                event.subject.fx = null;
+                event.subject.fy = null;
+            }
+            
+            return d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended);
+        }
+
+        function highlightConnections(node) {
+            d3.selectAll('.link')
+                .classed('highlighted', d => 
+                    d.source.id === node.id || d.target.id === node.id
+                );
+            
+            d3.selectAll('.node')
+                .style('opacity', d => {
+                    const isConnected = d.id === node.id || 
+                        currentData.concepts.edges?.some(e => 
+                            (e.source_id === node.id && e.target_id === d.id) ||
+                            (e.target_id === node.id && e.source_id === d.id)
+                        );
+                    return isConnected ? 1 : 0.3;
+                });
+        }
+
+        function clearHighlights() {
+            d3.selectAll('.link').classed('highlighted', false);
+            d3.selectAll('.node').style('opacity', 1);
+        }
+
+        function selectNode(node) {
+            selectedNode = node;
+            d3.selectAll('.node').classed('selected', false);
+            d3.selectAll('.node')
+                .filter(d => d.id === node.id)
+                .classed('selected', true)
+                .raise();
+            highlightConnections(node);
+        }
+
+        function clearSelection() {
+            selectedNode = null;
+            d3.selectAll('.node').classed('selected', false);
+            clearHighlights();
+        }
+
+        function showDetailPanel(node) {
+            document.getElementById('detail-name').textContent = node.name;
+            document.getElementById('detail-definition').textContent = node.definition;
+            document.getElementById('detail-explanation').textContent = node.explanation || 'No additional explanation available.';
+            
+            const badgesHtml = `
+                <span class="badge badge-type">${node.type}</span>
+                <span class="badge badge-difficulty">${node.difficulty}</span>
+                <span class="badge badge-importance">Importance: ${node.importance.toFixed(2)}</span>
+            `;
+            document.getElementById('detail-badges').innerHTML = badgesHtml;
+            
+            document.getElementById('detail-panel').style.display = 'block';
+        }
+
+        function hideDetailPanel() {
+            document.getElementById('detail-panel').style.display = 'none';
+        }
+
+        function applyFilters() {
+            const difficultyFilter = document.getElementById('difficulty-filter').value;
+            const typeFilter = document.getElementById('type-filter').value;
+            
+            d3.selectAll('.node').style('display', function(d) {
+                const matchesDifficulty = difficultyFilter === 'all' || d.difficulty === difficultyFilter;
+                const matchesType = typeFilter === 'all' || d.type === typeFilter;
+                return (matchesDifficulty && matchesType) ? 'block' : 'none';
+            });
+            
+            d3.selectAll('.node-label').style('display', function(d) {
+                const matchesDifficulty = difficultyFilter === 'all' || d.difficulty === difficultyFilter;
+                const matchesType = typeFilter === 'all' || d.type === typeFilter;
+                return (matchesDifficulty && matchesType) ? 'block' : 'none';
+            });
+        }
+
+        function showTooltip(event, html) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = html;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (event.pageX + 15) + 'px';
+            tooltip.style.top = (event.pageY + 15) + 'px';
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+
+        function resetZoom() {
+            svg.transition()
+                .duration(750)
+                .call(zoom.transform, d3.zoomIdentity);
+        }
+
+        function zoomIn() {
+            svg.transition()
+                .duration(300)
+                .call(zoom.scaleBy, 1.3);
+        }
+
+        function zoomOut() {
+            svg.transition()
+                .duration(300)
+                .call(zoom.scaleBy, 0.7);
+        }
+
+        function centerGraph() {
+            if (!simulation || !svg) return;
+            
+            // Get all node positions
+            const nodes = simulation.nodes();
+            if (nodes.length === 0) return;
+            
+            // Calculate the bounding box of all nodes
+            let minX = Infinity, maxX = -Infinity;
+            let minY = Infinity, maxY = -Infinity;
+            
+            nodes.forEach(node => {
+                if (node.x < minX) minX = node.x;
+                if (node.x > maxX) maxX = node.x;
+                if (node.y < minY) minY = node.y;
+                if (node.y > maxY) maxY = node.y;
+            });
+            
+            // Calculate center of nodes
+            const centerX = (minX + maxX) / 2;
+            const centerY = (minY + maxY) / 2;
+            
+            // Calculate viewport center
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const viewportCenterX = width / 2;
+            const viewportCenterY = height / 2;
+            
+            // Calculate the transform needed to center the graph
+            const translateX = viewportCenterX - centerX;
+            const translateY = viewportCenterY - centerY;
+            
+            // Apply smooth transition to center the view
+            svg.transition()
+                .duration(750)
+                .call(
+                    zoom.transform,
+                    d3.zoomIdentity.translate(translateX, translateY)
+                );
+        }
+
+        function togglePhysics() {
+            physicsEnabled = !physicsEnabled;
+            if (physicsEnabled) {
+                simulation.alpha(0.3).restart();
+            } else {
+                simulation.stop();
+            }
+        }
+
+        function exportGraph() {
+            const svgElement = document.querySelector('#graph-container svg');
+            const serializer = new XMLSerializer();
+            const svgString = serializer.serializeToString(svgElement);
+            const blob = new Blob([svgString], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `concept-graph-${currentPaperId}.svg`;
+            link.click();
+        }
+
+        function showInputPanel() {
+            document.getElementById('input-panel').style.display = 'block';
+            document.getElementById('info-panel').style.display = 'none';
+            document.getElementById('legend').style.display = 'none';
+            document.getElementById('controls').style.display = 'none';
+            document.getElementById('filter-panel').style.display = 'none';
+            document.getElementById('zoom-controls').style.display = 'none';
+            document.getElementById('help-text').style.display = 'none';
+            hideDetailPanel();
+            d3.select('#graph-container svg').remove();
+        }
+
+        function showLoader(text) {
+            document.getElementById('loader-text').textContent = text;
+            document.getElementById('loader').style.display = 'flex';
+        }
+
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error-message').style.display = 'none';
+        }
+
+        document.getElementById('paper-id').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                loadGraph();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (!currentData) return;
+            
+            switch(e.key) {
+                case '+':
+                case '=':
+                    zoomIn();
+                    break;
+                case '-':
+                case '_':
+                    zoomOut();
+                    break;
+                case '0':
+                    resetZoom();
+                    break;
+                case 'Escape':
+                    if (selectedNode) {
+                        clearSelection();
+                        hideDetailPanel();
+                    }
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
