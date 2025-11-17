@@ -1,137 +1,137 @@
 {
-  "4b9b90f3-b3f8-42af-a26d-eaf8aa14fb94": {
-    "id": "4b9b90f3-b3f8-42af-a26d-eaf8aa14fb94",
-    "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+  "fb4f8d32-b727-4920-891b-f486ce4af44f": {
+    "id": "fb4f8d32-b727-4920-891b-f486ce4af44f",
+    "paper_id": "4427277e-c272-4ff3-95e6-f236e1053d95",
     "user_id": "5fef057f-bf66-45d3-a6bd-1a1353324156",
     "title": "Concept Check Quiz - 5 Questions",
     "questions": [
       {
-        "id": "8aefff7b-e58c-4530-9821-be50118ba015",
+        "id": "14af0489-414d-4029-9c16-09637162ad46",
         "type": "multiple_choice",
         "difficulty": "medium",
-        "question": "What is the primary challenge in multimodal learning, as highlighted in the paper?",
+        "question": "What is the primary advantage of using patch embedding in Vision Transformers, as discussed in the context of the paper?",
         "options": [
-          "Integrating information from multiple modalities effectively",
-          "Designing fusion paradigms for image and text data",
-          "Developing deep learning approaches for single modalities",
-          "Collecting large datasets for various modalities"
+          "It enables the model to capture local dependencies between neighboring pixels",
+          "It allows the model to handle larger image sizes and reduces the quadratic runtime of self-attention layers",
+          "It makes the model more suitable for deployment on edge devices due to its efficiency in terms of memory usage and latency",
+          "It eliminates the need for convolutional neural networks in image classification tasks"
         ],
-        "correct_answer": "Integrating information from multiple modalities effectively",
-        "explanation": "The paper states that 'effectively integrating information from multiple modalities remains a fundamental challenge in multimodal learning', emphasizing the need for better methods to combine data from different sources.",
-        "concept_id": "77f77674-44cb-4396-88a4-98c273446a30",
-        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "correct_answer": "It allows the model to handle larger image sizes and reduces the quadratic runtime of self-attention layers",
+        "explanation": "The correct answer is supported by the paper, which states that patch embedding 'enables handling larger image sizes and mitigating the quadratic runtime of self-attention layers in Transformers'. This highlights the efficiency and scalability of patch embedding in Vision Transformers.",
+        "concept_id": "7134f4a8-a9e0-4d3d-a785-a21f0b4c5b73",
+        "paper_id": "4427277e-c272-4ff3-95e6-f236e1053d95",
         "concepts": [],
         "page_reference": null,
         "distractor_explanations": {
-          "Designing fusion paradigms for image and text data": "While designing fusion paradigms is an important aspect of multimodal learning, the paper notes that these approaches are often specific to certain tasks and modalities, and may not be generalizable.",
-          "Developing deep learning approaches for single modalities": "The paper actually highlights the progress made in deep learning approaches, but notes that multimodal learning involves combining multiple modalities, not just using a single modality.",
-          "Collecting large datasets for various modalities": "While data collection is an important step in machine learning, the paper focuses on the challenge of integrating information from multiple modalities, rather than just collecting data."
+          "It enables the model to capture local dependencies between neighboring pixels": "This option is incorrect because patch embedding is actually used to capture global dependencies and relationships between patches, not just local dependencies between neighboring pixels.",
+          "It makes the model more suitable for deployment on edge devices due to its efficiency in terms of memory usage and latency": "This option is incorrect because, according to the paper, it is actually Convolutional Neural Networks (CNNs) that are more suitable for deployment on edge devices due to their efficiency in terms of memory usage and latency.",
+          "It eliminates the need for convolutional neural networks in image classification tasks": "This option is incorrect because the paper states that CNNs continue to excel in scenarios with limited data availability, indicating that they still have a role to play in image classification tasks."
         }
       },
       {
-        "id": "c1d54207-e995-4740-8864-3a2ae7ab4436",
+        "id": "c2fee63e-3c21-443d-8ca2-cabc0f48bce3",
         "type": "multiple_choice",
         "difficulty": "medium",
-        "question": "What advantage does Minape's use of patch embedding provide in terms of handling image data, and how does this relate to its performance on edge devices?",
+        "question": "What is the primary advantage of using Minape, a novel multimodal isotropic convolutional neural architecture, over existing approaches?",
         "options": [
-          "It reduces the quadratic runtime of self-attention layers, allowing for more efficient deployment on edge devices",
-          "It increases the memory usage of the model, making it less suitable for edge devices",
-          "It mitigates the impact of varying data sizes on model performance, but at the cost of increased latency",
-          "It enhances the capture of local dependencies, rather than global dependencies, in image data"
+          "It can handle larger image sizes and mitigate the quadratic runtime of self-attention layers",
+          "It requires more parameters and memory to achieve state-of-the-art performance",
+          "It enables the capture of global dependencies and relationships between patches in image data",
+          "It achieves higher accuracy while requiring fewer parameters and less memory"
         ],
-        "correct_answer": "It reduces the quadratic runtime of self-attention layers, allowing for more efficient deployment on edge devices",
-        "explanation": "According to the paper context, patch embedding enables handling larger image sizes and mitigating the quadratic runtime of self-attention layers in Transformers. This is relevant to Minape's performance on edge devices, as the paper highlights the efficiency of CNNs in terms of memory usage and latency, making them suitable for deployment on edge devices. By incorporating patch embedding, Minape can leverage these advantages.",
-        "concept_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
-        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "correct_answer": "It achieves higher accuracy while requiring fewer parameters and less memory",
+        "explanation": "According to the paper, Minape outperforms existing approaches in terms of accuracy and requires fewer than 1M parameters and occupies less than 12 MB in size, making it a lightweight and efficient architecture.",
+        "concept_id": "cfd15953-44a9-4a3f-8eab-e140ad5c8ecc",
+        "paper_id": "4427277e-c272-4ff3-95e6-f236e1053d95",
         "concepts": [],
         "page_reference": null,
         "distractor_explanations": {
-          "It increases the memory usage of the model, making it less suitable for edge devices": "This option is incorrect because the paper actually highlights the efficiency of Minape in terms of memory usage, with the model occupying less than 12 MB in size.",
-          "It mitigates the impact of varying data sizes on model performance, but at the cost of increased latency": "This option is incorrect because the paper does not mention increased latency as a trade-off for using patch embedding. Instead, it highlights the advantages of patch embedding in terms of handling larger image sizes and reducing quadratic runtime.",
-          "It enhances the capture of local dependencies, rather than global dependencies, in image data": "This option is incorrect because the paper actually states that patch embedding allows for capturing global dependencies and relationships between patches, enhancing effective image understanding and analysis."
+          "It can handle larger image sizes and mitigate the quadratic runtime of self-attention layers": "This is a benefit of patch embedding in general, but not the primary advantage of Minape specifically.",
+          "It requires more parameters and memory to achieve state-of-the-art performance": "This is the opposite of what the paper states, as Minape requires fewer parameters and less memory.",
+          "It enables the capture of global dependencies and relationships between patches in image data": "While Minape does incorporate patch embedding, this is not the primary advantage of the architecture."
         }
       },
       {
-        "id": "21696aa0-8cd3-47e2-96eb-550bb03ad668",
+        "id": "b2b537d2-99d8-4e70-8b64-1063178ccec4",
         "type": "multiple_choice",
         "difficulty": "medium",
-        "question": "What is the primary motivation for using patch embedding in Transformer-based models like Vision Transformer (ViT)?",
+        "question": "What is a key challenge in multimodal learning, despite the progress made in leveraging data from various modalities?",
         "options": [
-          "To reduce the dimensionality of image data for faster processing",
-          "To mitigate the quadratic runtime of self-attention layers in Transformers",
-          "To enhance the capture of local dependencies within images",
-          "To increase the memory usage and latency of models for better performance"
+          "Effectively integrating information from multiple modalities",
+          "Collecting large amounts of data from different modalities",
+          "Designing models that can handle high-dimensional data",
+          "Selecting the most relevant modalities for a specific task"
         ],
-        "correct_answer": "To mitigate the quadratic runtime of self-attention layers in Transformers",
-        "explanation": "The correct answer is supported by the paper, which states that patch embedding enables handling larger image sizes and mitigating the quadratic runtime of self-attention layers in Transformers, thus improving the efficiency of the model.",
-        "concept_id": "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5",
-        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "correct_answer": "Effectively integrating information from multiple modalities",
+        "explanation": "According to the paper, despite the advancements in deep learning approaches, effectively integrating information from multiple modalities remains a fundamental challenge in multimodal learning.",
+        "concept_id": "f259dd9c-a9f1-4aa7-9aad-b476b0552462",
+        "paper_id": "4427277e-c272-4ff3-95e6-f236e1053d95",
         "concepts": [],
         "page_reference": null,
         "distractor_explanations": {
-          "To reduce the dimensionality of image data for faster processing": "While patch embedding does involve dividing images into smaller patches and embedding them into a lower-dimensional space, the primary motivation is to address the quadratic runtime issue, not just to reduce dimensionality.",
-          "To enhance the capture of local dependencies within images": "Patch embedding is actually focused on capturing global dependencies and relationships between patches, rather than just local dependencies.",
-          "To increase the memory usage and latency of models for better performance": "This option is incorrect because the paper highlights the efficiency of patch embedding in terms of handling larger image sizes and mitigating runtime issues, which is the opposite of increasing memory usage and latency."
+          "Collecting large amounts of data from different modalities": "While collecting data can be a challenge, the paper specifically highlights the difficulty of integrating information from multiple modalities, not just collecting the data.",
+          "Designing models that can handle high-dimensional data": "The paper does not mention high-dimensional data as a key challenge in multimodal learning. Instead, it focuses on the integration of information from different modalities.",
+          "Selecting the most relevant modalities for a specific task": "The paper does mention that different modalities are relevant for different tasks, but it does not identify selecting the most relevant modalities as a key challenge in multimodal learning."
         }
       },
       {
-        "id": "faa3de45-c7c3-40ba-b525-f95d5017a749",
+        "id": "0ee06a5e-d69c-48f0-8055-ceb8bc8f53c0",
         "type": "multiple_choice",
         "difficulty": "medium",
-        "question": "What advantage does an isotropic convolutional neural architecture have over other architectures, particularly in scenarios with limited data availability and varying input sizes?",
+        "question": "How does the use of isotropic convolutional neural networks in the proposed Minape architecture address the challenges posed by varying data sizes and complexities?",
         "options": [
-          "It requires more parameters and computational resources to handle varying input sizes",
-          "It is less efficient in terms of memory usage and latency, making it less suitable for edge devices",
-          "It can handle inputs of varying sizes and aspect ratios, making it computationally efficient and requiring fewer parameters",
-          "It is only suitable for image data and cannot be applied to time series data"
+          "By increasing the number of filters in each layer to match the complexity of the data",
+          "By using a fixed number of filters in each layer, allowing for efficient processing of varying data sizes",
+          "By dynamically adjusting the number of layers based on the size of the input data",
+          "By applying a traditional convolutional neural network architecture to each modality separately"
         ],
-        "correct_answer": "It can handle inputs of varying sizes and aspect ratios, making it computationally efficient and requiring fewer parameters",
-        "explanation": "According to the paper, isotropic convolutional neural architectures, such as Minape, are designed to handle inputs of varying sizes and aspect ratios. This makes them suitable for applications where the input data has different dimensions, and they are also computationally efficient, requiring fewer parameters than other architectures, as demonstrated by Minape's performance with fewer than 1M parameters.",
-        "concept_id": "4b3030a2-8173-46ff-80a1-b2f5b26f526c",
-        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "correct_answer": "By using a fixed number of filters in each layer, allowing for efficient processing of varying data sizes",
+        "explanation": "The correct answer is supported by the paper's explanation of how isotropic models address the challenges posed by varying data sizes and complexities. The use of a fixed number of filters in each layer enables efficient processing of varying data sizes, as seen in the context of Eq. 10, where the spectrograms are patched and linearly embedded before being processed by the channel-point convolutional block.",
+        "concept_id": "0cd00fbd-bf9c-415c-9478-ac77cd328ec8",
+        "paper_id": "4427277e-c272-4ff3-95e6-f236e1053d95",
         "concepts": [],
         "page_reference": null,
         "distractor_explanations": {
-          "It requires more parameters and computational resources to handle varying input sizes": "This option is incorrect because the paper states that isotropic convolutional neural architectures require fewer parameters, not more, making them more efficient.",
-          "It is less efficient in terms of memory usage and latency, making it less suitable for edge devices": "This option is incorrect because the paper highlights the efficiency of Convolutional Neural Networks (CNNs) in terms of memory usage and latency, making them suitable for deployment on edge devices.",
-          "It is only suitable for image data and cannot be applied to time series data": "This option is incorrect because the paper proposes Minape, a multimodal isotropic convolutional neural architecture that incorporates patch embedding to both time series and image data for classification purposes."
+          "By increasing the number of filters in each layer to match the complexity of the data": "This option is incorrect because increasing the number of filters would not address the challenge of varying data sizes and complexities, and would likely increase computational costs.",
+          "By dynamically adjusting the number of layers based on the size of the input data": "This option is incorrect because the paper does not mention dynamically adjusting the number of layers, and such an approach would likely add complexity to the model.",
+          "By applying a traditional convolutional neural network architecture to each modality separately": "This option is incorrect because the paper proposes a multimodal isotropic convolutional neural architecture that incorporates patch embedding to both time series and image data, rather than applying a traditional architecture to each modality separately."
         }
       },
       {
-        "id": "0b6b470b-c734-4d79-9f76-d60281db764b",
+        "id": "197d53a6-88b4-47d3-b155-eafd8a522ab7",
         "type": "multiple_choice",
         "difficulty": "medium",
-        "question": "What is the primary advantage of using patch embedding in Transformer-based models, such as the Vision Transformer (ViT), according to the paper?",
+        "question": "What is the primary advantage of using patch embedding in Transformer-based models, such as the Vision Transformer (ViT), according to the provided context?",
         "options": [
-          "Reducing the computational requirements of the system",
-          "Capturing global dependencies and relationships between patches",
-          "Improving the model's performance on tasks with limited data availability",
-          "Enhancing the efficiency of memory utilization without impacting inference time"
+          "Reducing the computational requirements of self-attention layers",
+          "Increasing the memory utilization efficiency of the model",
+          "Enabling the handling of larger image sizes and capturing global dependencies",
+          "Improving the performance of the model in scenarios with limited data availability"
         ],
-        "correct_answer": "Capturing global dependencies and relationships between patches",
-        "explanation": "The paper states that patch embedding 'allows for capturing global dependencies and relationships between patches, enhancing effective image understanding and analysis.' This suggests that the primary advantage of patch embedding is its ability to model complex relationships between different parts of the input data.",
-        "concept_id": "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198",
-        "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+        "correct_answer": "Enabling the handling of larger image sizes and capturing global dependencies",
+        "explanation": "The correct answer is supported by the context, which states that patch embedding 'enables handling larger image sizes and mitigating the quadratic runtime of self-attention layers in Transformers.' This suggests that patch embedding is beneficial for processing larger images and capturing global dependencies, making option C the most accurate answer.",
+        "concept_id": "823719c1-d9c0-405b-b19a-6704fe35b603",
+        "paper_id": "4427277e-c272-4ff3-95e6-f236e1053d95",
         "concepts": [],
         "page_reference": null,
         "distractor_explanations": {
-          "Reducing the computational requirements of the system": "While the paper does discuss the importance of efficient memory utilization and computational requirements, it does not suggest that patch embedding is primarily used for this purpose.",
-          "Improving the model's performance on tasks with limited data availability": "The paper actually notes that Convolutional Neural Networks (CNNs) are more suitable for scenarios with limited data availability, not Transformer-based models with patch embedding.",
-          "Enhancing the efficiency of memory utilization without impacting inference time": "The paper mentions that the TCN model enhanced the baseline performance without impacting inference time, but this is not related to patch embedding, which is a characteristic of Transformer-based models like ViT."
+          "Reducing the computational requirements of self-attention layers": "While patch embedding does mitigate the quadratic runtime of self-attention layers, this is not the primary advantage mentioned in the context.",
+          "Increasing the memory utilization efficiency of the model": "The context does not mention patch embedding as a method for improving memory utilization efficiency.",
+          "Improving the performance of the model in scenarios with limited data availability": "The context actually suggests that Convolutional Neural Networks (CNNs) excel in scenarios with limited data availability, not Transformer-based models with patch embedding."
         }
       }
     ],
     "total_questions": 5,
     "target_concepts": [
-      "77f77674-44cb-4396-88a4-98c273446a30",
-      "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
-      "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5",
-      "4b3030a2-8173-46ff-80a1-b2f5b26f526c",
-      "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198"
+      "7134f4a8-a9e0-4d3d-a785-a21f0b4c5b73",
+      "cfd15953-44a9-4a3f-8eab-e140ad5c8ecc",
+      "f259dd9c-a9f1-4aa7-9aad-b476b0552462",
+      "0cd00fbd-bf9c-415c-9478-ac77cd328ec8",
+      "823719c1-d9c0-405b-b19a-6704fe35b603"
     ],
     "difficulty": "medium",
     "difficulty_level": "medium",
-    "created_at": "2025-11-15T08:56:24.471647",
+    "created_at": "2025-11-17T01:52:19.688119",
     "time_limit": null,
     "is_adaptive": false
   }

@@ -1,44 +1,44 @@
 {
-  "5fef057f-bf66-45d3-a6bd-1a1353324156_37f45260-f07b-4a8d-82ec-208c7e02b152": [
+  "5fef057f-bf66-45d3-a6bd-1a1353324156_4427277e-c272-4ff3-95e6-f236e1053d95": [
     {
-      "quiz_id": "4b9b90f3-b3f8-42af-a26d-eaf8aa14fb94",
+      "quiz_id": "fb4f8d32-b727-4920-891b-f486ce4af44f",
       "user_id": "5fef057f-bf66-45d3-a6bd-1a1353324156",
-      "paper_id": "37f45260-f07b-4a8d-82ec-208c7e02b152",
+      "paper_id": "4427277e-c272-4ff3-95e6-f236e1053d95",
       "answers": [
         {
-          "question_id": "8aefff7b-e58c-4530-9821-be50118ba015",
-          "user_answer": "Collecting large datasets for various modalities",
+          "question_id": "14af0489-414d-4029-9c16-09637162ad46",
+          "user_answer": "It enables the model to capture local dependencies between neighboring pixels",
           "is_correct": false,
           "time_taken_seconds": null,
-          "concept_id": "77f77674-44cb-4396-88a4-98c273446a30"
+          "concept_id": "7134f4a8-a9e0-4d3d-a785-a21f0b4c5b73"
         },
         {
-          "question_id": "c1d54207-e995-4740-8864-3a2ae7ab4436",
-          "user_answer": "It increases the memory usage of the model, making it less suitable for edge devices",
+          "question_id": "c2fee63e-3c21-443d-8ca2-cabc0f48bce3",
+          "user_answer": "It enables the capture of global dependencies and relationships between patches in image data",
           "is_correct": false,
           "time_taken_seconds": null,
-          "concept_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+          "concept_id": "cfd15953-44a9-4a3f-8eab-e140ad5c8ecc"
         },
         {
-          "question_id": "21696aa0-8cd3-47e2-96eb-550bb03ad668",
-          "user_answer": "To reduce the dimensionality of image data for faster processing",
+          "question_id": "b2b537d2-99d8-4e70-8b64-1063178ccec4",
+          "user_answer": "Designing models that can handle high-dimensional data",
           "is_correct": false,
           "time_taken_seconds": null,
-          "concept_id": "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5"
+          "concept_id": "f259dd9c-a9f1-4aa7-9aad-b476b0552462"
         },
         {
-          "question_id": "faa3de45-c7c3-40ba-b525-f95d5017a749",
-          "user_answer": "It can handle inputs of varying sizes and aspect ratios, making it computationally efficient and requiring fewer parameters",
+          "question_id": "0ee06a5e-d69c-48f0-8055-ceb8bc8f53c0",
+          "user_answer": "By using a fixed number of filters in each layer, allowing for efficient processing of varying data sizes",
           "is_correct": true,
           "time_taken_seconds": null,
-          "concept_id": "4b3030a2-8173-46ff-80a1-b2f5b26f526c"
+          "concept_id": "0cd00fbd-bf9c-415c-9478-ac77cd328ec8"
         },
         {
-          "question_id": "0b6b470b-c734-4d79-9f76-d60281db764b",
-          "user_answer": "Enhancing the efficiency of memory utilization without impacting inference time",
+          "question_id": "197d53a6-88b4-47d3-b155-eafd8a522ab7",
+          "user_answer": "Improving the performance of the model in scenarios with limited data availability",
           "is_correct": false,
           "time_taken_seconds": null,
-          "concept_id": "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198"
+          "concept_id": "823719c1-d9c0-405b-b19a-6704fe35b603"
         }
       ],
       "score": 20.0,
@@ -46,70 +46,70 @@
       "total_questions": 5,
       "correct_answers": 1,
       "time_taken": 0,
-      "submitted_at": "2025-11-15T08:56:36.431181",
-      "completed_at": "2025-11-15T08:56:36.431181",
+      "submitted_at": "2025-11-17T01:52:32.572682",
+      "completed_at": "2025-11-17T01:52:32.572682",
       "question_results": [
         {
-          "question_id": "8aefff7b-e58c-4530-9821-be50118ba015",
-          "question": "What is the primary challenge in multimodal learning, as highlighted in the paper?",
-          "user_answer": "Collecting large datasets for various modalities",
-          "correct_answer": "Integrating information from multiple modalities effectively",
+          "question_id": "14af0489-414d-4029-9c16-09637162ad46",
+          "question": "What is the primary advantage of using patch embedding in Vision Transformers, as discussed in the context of the paper?",
+          "user_answer": "It enables the model to capture local dependencies between neighboring pixels",
+          "correct_answer": "It allows the model to handle larger image sizes and reduces the quadratic runtime of self-attention layers",
           "is_correct": false,
-          "explanation": "The paper states that 'effectively integrating information from multiple modalities remains a fundamental challenge in multimodal learning', emphasizing the need for better methods to combine data from different sources.",
-          "concept_id": "77f77674-44cb-4396-88a4-98c273446a30"
+          "explanation": "The correct answer is supported by the paper, which states that patch embedding 'enables handling larger image sizes and mitigating the quadratic runtime of self-attention layers in Transformers'. This highlights the efficiency and scalability of patch embedding in Vision Transformers.",
+          "concept_id": "7134f4a8-a9e0-4d3d-a785-a21f0b4c5b73"
         },
         {
-          "question_id": "c1d54207-e995-4740-8864-3a2ae7ab4436",
-          "question": "What advantage does Minape's use of patch embedding provide in terms of handling image data, and how does this relate to its performance on edge devices?",
-          "user_answer": "It increases the memory usage of the model, making it less suitable for edge devices",
-          "correct_answer": "It reduces the quadratic runtime of self-attention layers, allowing for more efficient deployment on edge devices",
+          "question_id": "c2fee63e-3c21-443d-8ca2-cabc0f48bce3",
+          "question": "What is the primary advantage of using Minape, a novel multimodal isotropic convolutional neural architecture, over existing approaches?",
+          "user_answer": "It enables the capture of global dependencies and relationships between patches in image data",
+          "correct_answer": "It achieves higher accuracy while requiring fewer parameters and less memory",
           "is_correct": false,
-          "explanation": "According to the paper context, patch embedding enables handling larger image sizes and mitigating the quadratic runtime of self-attention layers in Transformers. This is relevant to Minape's performance on edge devices, as the paper highlights the efficiency of CNNs in terms of memory usage and latency, making them suitable for deployment on edge devices. By incorporating patch embedding, Minape can leverage these advantages.",
-          "concept_id": "910c46c0-61cd-43f7-8cc7-670c8461fdc3"
+          "explanation": "According to the paper, Minape outperforms existing approaches in terms of accuracy and requires fewer than 1M parameters and occupies less than 12 MB in size, making it a lightweight and efficient architecture.",
+          "concept_id": "cfd15953-44a9-4a3f-8eab-e140ad5c8ecc"
         },
         {
-          "question_id": "21696aa0-8cd3-47e2-96eb-550bb03ad668",
-          "question": "What is the primary motivation for using patch embedding in Transformer-based models like Vision Transformer (ViT)?",
-          "user_answer": "To reduce the dimensionality of image data for faster processing",
-          "correct_answer": "To mitigate the quadratic runtime of self-attention layers in Transformers",
+          "question_id": "b2b537d2-99d8-4e70-8b64-1063178ccec4",
+          "question": "What is a key challenge in multimodal learning, despite the progress made in leveraging data from various modalities?",
+          "user_answer": "Designing models that can handle high-dimensional data",
+          "correct_answer": "Effectively integrating information from multiple modalities",
           "is_correct": false,
-          "explanation": "The correct answer is supported by the paper, which states that patch embedding enables handling larger image sizes and mitigating the quadratic runtime of self-attention layers in Transformers, thus improving the efficiency of the model.",
-          "concept_id": "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5"
+          "explanation": "According to the paper, despite the advancements in deep learning approaches, effectively integrating information from multiple modalities remains a fundamental challenge in multimodal learning.",
+          "concept_id": "f259dd9c-a9f1-4aa7-9aad-b476b0552462"
         },
         {
-          "question_id": "faa3de45-c7c3-40ba-b525-f95d5017a749",
-          "question": "What advantage does an isotropic convolutional neural architecture have over other architectures, particularly in scenarios with limited data availability and varying input sizes?",
-          "user_answer": "It can handle inputs of varying sizes and aspect ratios, making it computationally efficient and requiring fewer parameters",
-          "correct_answer": "It can handle inputs of varying sizes and aspect ratios, making it computationally efficient and requiring fewer parameters",
+          "question_id": "0ee06a5e-d69c-48f0-8055-ceb8bc8f53c0",
+          "question": "How does the use of isotropic convolutional neural networks in the proposed Minape architecture address the challenges posed by varying data sizes and complexities?",
+          "user_answer": "By using a fixed number of filters in each layer, allowing for efficient processing of varying data sizes",
+          "correct_answer": "By using a fixed number of filters in each layer, allowing for efficient processing of varying data sizes",
           "is_correct": true,
-          "explanation": "According to the paper, isotropic convolutional neural architectures, such as Minape, are designed to handle inputs of varying sizes and aspect ratios. This makes them suitable for applications where the input data has different dimensions, and they are also computationally efficient, requiring fewer parameters than other architectures, as demonstrated by Minape's performance with fewer than 1M parameters.",
-          "concept_id": "4b3030a2-8173-46ff-80a1-b2f5b26f526c"
+          "explanation": "The correct answer is supported by the paper's explanation of how isotropic models address the challenges posed by varying data sizes and complexities. The use of a fixed number of filters in each layer enables efficient processing of varying data sizes, as seen in the context of Eq. 10, where the spectrograms are patched and linearly embedded before being processed by the channel-point convolutional block.",
+          "concept_id": "0cd00fbd-bf9c-415c-9478-ac77cd328ec8"
         },
         {
-          "question_id": "0b6b470b-c734-4d79-9f76-d60281db764b",
-          "question": "What is the primary advantage of using patch embedding in Transformer-based models, such as the Vision Transformer (ViT), according to the paper?",
-          "user_answer": "Enhancing the efficiency of memory utilization without impacting inference time",
-          "correct_answer": "Capturing global dependencies and relationships between patches",
+          "question_id": "197d53a6-88b4-47d3-b155-eafd8a522ab7",
+          "question": "What is the primary advantage of using patch embedding in Transformer-based models, such as the Vision Transformer (ViT), according to the provided context?",
+          "user_answer": "Improving the performance of the model in scenarios with limited data availability",
+          "correct_answer": "Enabling the handling of larger image sizes and capturing global dependencies",
           "is_correct": false,
-          "explanation": "The paper states that patch embedding 'allows for capturing global dependencies and relationships between patches, enhancing effective image understanding and analysis.' This suggests that the primary advantage of patch embedding is its ability to model complex relationships between different parts of the input data.",
-          "concept_id": "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198"
+          "explanation": "The correct answer is supported by the context, which states that patch embedding 'enables handling larger image sizes and mitigating the quadratic runtime of self-attention layers in Transformers.' This suggests that patch embedding is beneficial for processing larger images and capturing global dependencies, making option C the most accurate answer.",
+          "concept_id": "823719c1-d9c0-405b-b19a-6704fe35b603"
         }
       ],
       "weak_concepts": [
-        "77f77674-44cb-4396-88a4-98c273446a30",
-        "910c46c0-61cd-43f7-8cc7-670c8461fdc3",
-        "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5",
-        "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198"
+        "7134f4a8-a9e0-4d3d-a785-a21f0b4c5b73",
+        "cfd15953-44a9-4a3f-8eab-e140ad5c8ecc",
+        "f259dd9c-a9f1-4aa7-9aad-b476b0552462",
+        "823719c1-d9c0-405b-b19a-6704fe35b603"
       ],
       "strong_concepts": [
-        "4b3030a2-8173-46ff-80a1-b2f5b26f526c"
+        "0cd00fbd-bf9c-415c-9478-ac77cd328ec8"
       ],
       "concept_scores": {
-        "77f77674-44cb-4396-88a4-98c273446a30": 0.0,
-        "910c46c0-61cd-43f7-8cc7-670c8461fdc3": 0.0,
-        "9c6059bc-0ba3-4ef7-89ab-bd8c14fbfdb5": 0.0,
-        "4b3030a2-8173-46ff-80a1-b2f5b26f526c": 1.0,
-        "2fd71d0b-456c-4a93-a0b7-0a2c8b71a198": 0.0
+        "7134f4a8-a9e0-4d3d-a785-a21f0b4c5b73": 0.0,
+        "cfd15953-44a9-4a3f-8eab-e140ad5c8ecc": 0.0,
+        "f259dd9c-a9f1-4aa7-9aad-b476b0552462": 0.0,
+        "0cd00fbd-bf9c-415c-9478-ac77cd328ec8": 1.0,
+        "823719c1-d9c0-405b-b19a-6704fe35b603": 0.0
       }
     }
   ]

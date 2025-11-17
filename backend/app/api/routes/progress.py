@@ -27,6 +27,12 @@ def get_or_create_progress(user_id: str, paper_id: str) -> UserProgress:
             user_id=user_id,
             paper_id=paper_id
         )
+    else:
+        # FIX: Ensure loaded data is converted to UserProgress model
+        existing = user_progress_db[key]
+        if isinstance(existing, dict):
+            user_progress_db[key] = UserProgress(**existing)
+    
     return user_progress_db[key]
 
 
@@ -130,6 +136,7 @@ async def get_concept_mastery(
     
     return progress.concepts_mastery
 
+
 @router.get("/progress/{user_id}/{paper_id}/concepts")
 async def get_concept_progress(
     user_id: str,
@@ -168,6 +175,8 @@ async def get_concept_progress(
     
     print(f"✅ Returning {len(concept_progress)} concept progress records")
     return concept_progress
+
+
 @router.get("/progress/{user_id}/{paper_id}/due-for-review")
 async def get_concepts_due_for_review(
     user_id: str,
@@ -204,7 +213,8 @@ async def get_retention_stats(
             "overall_retention": 0.0,
             "concepts_mastered": 0,
             "concepts_in_progress": 0,
-            "concepts_struggling": 0
+            "concepts_struggling": 0,
+            "average_confidence": 0.0
         }
     
     progress = get_or_create_progress(user_id, paper_id)
@@ -218,12 +228,14 @@ async def get_retention_stats(
     in_progress = total - mastered - struggling
     
     overall = mastered / total if total > 0 else 0.0
+    avg_confidence = sum(cm.mastery_level for cm in progress.concepts_mastery) / total if total > 0 else 0.0
     
     stats = {
         "overall_retention": overall,
         "concepts_mastered": mastered,
         "concepts_in_progress": in_progress,
-        "concepts_struggling": struggling
+        "concepts_struggling": struggling,
+        "average_confidence": avg_confidence
     }
     
     print(f"✅ Stats: {stats}")
@@ -232,84 +244,118 @@ async def get_retention_stats(
 
 
 def _update_progress(progress: UserProgress, user_id: str, paper_id: str):
-    """Update progress based on recent quiz results"""
+    """Update progress based on recent quiz results - FIXED VERSION"""
+    
+    # FIX: Ensure progress is a UserProgress object, not a dict
+    if isinstance(progress, dict):
+        progress = UserProgress(**progress)
+        # Update the database with the converted object
+        key = f"{user_id}_{paper_id}"
+        user_progress_db[key] = progress
     
     print(f"\n🔄 Updating progress for user {user_id}, paper {paper_id}")
     
     # Get all quiz results for this user-paper combo
     user_paper_key = f"{user_id}_{paper_id}"
-    quiz_results = quiz_results_db.get(user_paper_key, [])
+    raw_quiz_results = quiz_results_db.get(user_paper_key, [])
+    
+    # FIX: Convert quiz results from dict to QuizResult objects
+    from app.models.quiz import QuizResult
+    quiz_results = []
+    for result in raw_quiz_results:
+        if isinstance(result, dict):
+            try:
+                quiz_results.append(QuizResult(**result))
+            except Exception as e:
+                print(f"   ⚠️ Skipping corrupted quiz result: {e}")
+                continue
+        else:
+            quiz_results.append(result)
     
     print(f"   Found {len(quiz_results)} quiz results")
     
     if not quiz_results:
         # Initialize concepts with 0 mastery
         if paper_id in concept_graphs_db:
-            concept_graph = concept_graphs_db[paper_id]
+            # FIX: Convert concept_graph from dict to ConceptGraph object
+            from app.models.concept import ConceptGraph
+            raw_concept_graph = concept_graphs_db[paper_id]
+            if isinstance(raw_concept_graph, dict):
+                concept_graph = ConceptGraph(**raw_concept_graph)
+            else:
+                concept_graph = raw_concept_graph
+            
             progress.concepts_mastery = []
             
             for concept in concept_graph.concepts:
                 progress.concepts_mastery.append(
                     ConceptMastery(
-                        concept_id=concept.id,
-                        concept_name=concept.name,
+                        concept_id=concept.id if hasattr(concept, 'id') else concept['id'],
+                        concept_name=concept.name if hasattr(concept, 'name') else concept['name'],
                         paper_id=paper_id,
                         mastery_level=0.0,
                         times_quizzed=0,
                         times_reviewed=0
                     )
                 )
-        print(f"   Initialized {len(progress.concepts_mastery)} concepts with 0 mastery")
+            print(f"   Initialized {len(progress.concepts_mastery)} concepts with 0 mastery")
         return
     
     # Calculate stats from quiz results
     progress.quiz_attempts = len(quiz_results)
     
     if quiz_results:
-        total_score = sum(r.score for r in quiz_results)
+        total_score = sum(r.score_percentage for r in quiz_results)
         progress.average_quiz_score = total_score / len(quiz_results)
     
-    # Build concept mastery from quiz results
+    # Build concept mastery from quiz results - FIXED TO USE concept_scores
     if paper_id in concept_graphs_db:
-        concept_graph = concept_graphs_db[paper_id]
+        # FIX: Convert concept_graph from dict to ConceptGraph object
+        from app.models.concept import ConceptGraph, Concept
+        raw_concept_graph = concept_graphs_db[paper_id]
+        if isinstance(raw_concept_graph, dict):
+            concept_graph = ConceptGraph(**raw_concept_graph)
+        else:
+            concept_graph = raw_concept_graph
+        
         concept_stats = {}
         
-        # Aggregate all quiz results for each concept
+        print(f"   Processing {len(quiz_results)} quiz results...")
+        
+        # FIXED: Use concept_scores directly from quiz results
         for quiz_result in quiz_results:
-            for answer in quiz_result.answers:
-                # Find which concept this question was about
-                concept_id = None
-                
-                # Try to get concept_id from answer or question
-                if hasattr(answer, 'concept_id'):
-                    concept_id = answer.concept_id
-                else:
-                    # Need to find question to get concept_id
-                    # This requires looking up the quiz
-                    pass
-                
-                if concept_id:
+            # Each quiz result has a concept_scores dict: {concept_id: score}
+            if hasattr(quiz_result, 'concept_scores') and quiz_result.concept_scores:
+                for concept_id, score in quiz_result.concept_scores.items():
                     if concept_id not in concept_stats:
                         concept_stats[concept_id] = {
-                            'correct': 0,
-                            'total': 0
+                            'scores': [],
+                            'count': 0
                         }
                     
-                    concept_stats[concept_id]['total'] += 1
-                    if answer.is_correct:
-                        concept_stats[concept_id]['correct'] += 1
+                    concept_stats[concept_id]['scores'].append(score)
+                    concept_stats[concept_id]['count'] += 1
         
         print(f"   Calculated stats for {len(concept_stats)} concepts")
         
         # Update concept mastery
         progress.concepts_mastery = []
         
-        for concept in concept_graph.concepts:
-            stats = concept_stats.get(concept.id, {'correct': 0, 'total': 0})
+        for raw_concept in concept_graph.concepts:
+            # FIX: Handle concept as dict or Concept object
+            if isinstance(raw_concept, dict):
+                concept = Concept(**raw_concept)
+            else:
+                concept = raw_concept
             
-            mastery_level = 0.0
-            if stats['total'] > 0:
-                mastery_level = stats['correct'] / stats['total']
+            if concept.id in concept_stats:
+                stats = concept_stats[concept.id]
+                # Average all the scores for this concept
+                mastery_level = sum(stats['scores']) / len(stats['scores'])
+                times_quizzed = stats['count']
+            else:
+                mastery_level = 0.0
+                times_quizzed = 0
             
             progress.concepts_mastery.append(
                 ConceptMastery(
@@ -317,10 +363,13 @@ def _update_progress(progress: UserProgress, user_id: str, paper_id: str):
                     concept_name=concept.name,
                     paper_id=paper_id,
                     mastery_level=mastery_level,
-                    times_quizzed=stats['total'],
-                    times_reviewed=stats['total']
+                    times_quizzed=times_quizzed,
+                    times_reviewed=times_quizzed
                 )
             )
+            
+            if times_quizzed > 0:
+                print(f"   {concept.name}: {mastery_level:.1%} ({times_quizzed} times quizzed)")
         
         print(f"   Updated {len(progress.concepts_mastery)} concept masteries")
     
@@ -329,20 +378,6 @@ def _update_progress(progress: UserProgress, user_id: str, paper_id: str):
         avg_mastery = sum(c.mastery_level for c in progress.concepts_mastery) / len(progress.concepts_mastery)
         progress.completion_percentage = int(avg_mastery * 100)
         print(f"   Completion: {progress.completion_percentage}%")
-
-
-def _calculate_average_quiz_score(user_id: str) -> float:
-    """Calculate average quiz score across all papers"""
-    all_results = []
-    for key, results_list in quiz_results_db.items():
-        if key.startswith(f"{user_id}_"):
-            all_results.extend(results_list)
-    
-    if not all_results:
-        return 0.0
-    
-    return sum(r.score for r in all_results) / len(all_results)
-
 
 def _calculate_study_streak(user_id: str) -> int:
     """Calculate current study streak in days"""
@@ -372,15 +407,25 @@ def _calculate_study_streak(user_id: str) -> int:
 
 def _generate_insights(user_id: str, papers: list) -> List[LearningInsight]:
     """Generate learning insights"""
+    from app.models.quiz import QuizResult
+    
     insights = []
     
     all_results = []
     for key, results_list in quiz_results_db.items():
         if key.startswith(f"{user_id}_"):
-            all_results.extend(results_list)
+            # Convert dicts to QuizResult objects
+            for result in results_list:
+                if isinstance(result, dict):
+                    try:
+                        all_results.append(QuizResult(**result))
+                    except:
+                        continue
+                else:
+                    all_results.append(result)
     
     if all_results:
-        avg_score = sum(r.score for r in all_results) / len(all_results)
+        avg_score = sum(r.score_percentage for r in all_results) / len(all_results)
         if avg_score >= 80:
             insights.append(LearningInsight(
                 type=LearningInsightType.ACHIEVEMENT,
@@ -438,15 +483,13 @@ async def start_study_session(
     
     return {"session_id": session_id, "message": "Study session started"}
 
+
 @router.get("/progress/debug/{user_id}/{paper_id}")
 async def debug_progress(
     user_id: str,
     paper_id: str
-    # REMOVED: current_user: User = Depends(get_current_user)
 ):
     """Debug endpoint to check quiz results"""
-    from app.api.routes.quiz import quiz_results_db
-    
     key = f"{user_id}_{paper_id}"
     results = quiz_results_db.get(key, [])
     
@@ -456,12 +499,12 @@ async def debug_progress(
         "all_keys": list(quiz_results_db.keys()),
         "results": [
             {
-                "quiz_id": r.quiz_id,
-                "score": r.score_percentage,
-                "concept_scores": r.concept_scores,
-                "num_concepts": len(r.concept_scores),
-                "total_questions": r.total_questions,
-                "correct_answers": r.correct_answers
+                "quiz_id": r.quiz_id if hasattr(r, 'quiz_id') else r.get('quiz_id'),
+                "score": r.score_percentage if hasattr(r, 'score_percentage') else r.get('score_percentage'),
+                "concept_scores": r.concept_scores if hasattr(r, 'concept_scores') else r.get('concept_scores'),
+                "num_concepts": len(r.concept_scores) if hasattr(r, 'concept_scores') else len(r.get('concept_scores', {})),
+                "total_questions": r.total_questions if hasattr(r, 'total_questions') else r.get('total_questions'),
+                "correct_answers": r.correct_answers if hasattr(r, 'correct_answers') else r.get('correct_answers')
             }
             for r in results
         ]

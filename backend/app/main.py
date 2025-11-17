@@ -30,30 +30,177 @@ async def lifespan(app: FastAPI):
         try:
             (loaded_papers, loaded_summaries, loaded_concepts,
              loaded_chats, loaded_quizzes, loaded_results,
-             loaded_progress) = load_all_databases()
+             loaded_understandings) = load_all_databases()
             
-            # Restore data to in-memory databases
+            # Import all necessary models
+            from app.models.paper import PaperResponse, Section, PaperMetadata
+            from app.models.paper import PaperSummary
+            from app.models.concept import ConceptGraph, Concept, ConceptEdge
+            from app.models.chat import ChatSession, Message, MessageRole, TutoringMode
+            from app.models.quiz import Quiz, Question, QuizResult, QuizAnswer
+            from app.models.progress import UserProgress, ConceptMastery
+            
+            # ============ RESTORE PAPERS ============
             if loaded_papers:
-                papers.papers_db.update(loaded_papers)
-                print(f"   Loaded {len(loaded_papers)} papers")
+                for paper_id, paper_data in loaded_papers.items():
+                    try:
+                        # Convert nested objects
+                        if isinstance(paper_data, dict):
+                            # Convert sections
+                            if 'sections' in paper_data and paper_data['sections']:
+                                paper_data['sections'] = [
+                                    Section(**s) if isinstance(s, dict) else s
+                                    for s in paper_data['sections']
+                                ]
+                            
+                            # Convert metadata
+                            if 'metadata' in paper_data and isinstance(paper_data['metadata'], dict):
+                                paper_data['metadata'] = PaperMetadata(**paper_data['metadata'])
+                            
+                            # Create PaperResponse
+                            paper = PaperResponse(**paper_data)
+                            papers.papers_db[paper_id] = paper
+                        else:
+                            papers.papers_db[paper_id] = paper_data
+                    except Exception as e:
+                        print(f"   ⚠️ Skipping corrupted paper {paper_id}: {e}")
+                
+                print(f"   ✅ Loaded {len(papers.papers_db)} papers")
+            
+            # ============ RESTORE SUMMARIES ============
             if loaded_summaries:
-                papers.summaries_db.update(loaded_summaries)
-                print(f"   Loaded {len(loaded_summaries)} summaries")
+                for summary_id, summary_data in loaded_summaries.items():
+                    try:
+                        if isinstance(summary_data, dict):
+                            summary = PaperSummary(**summary_data)
+                            papers.summaries_db[summary_id] = summary
+                        else:
+                            papers.summaries_db[summary_id] = summary_data
+                    except Exception as e:
+                        print(f"   ⚠️ Skipping corrupted summary {summary_id}: {e}")
+                
+                print(f"   ✅ Loaded {len(papers.summaries_db)} summaries")
+            
+            # ============ RESTORE CONCEPT GRAPHS ============
             if loaded_concepts:
-                papers.concept_graphs_db.update(loaded_concepts)
-                print(f"   Loaded {len(loaded_concepts)} concept graphs")
+                for concept_id, concept_data in loaded_concepts.items():
+                    try:
+                        if isinstance(concept_data, dict):
+                            # Convert concepts list
+                            if 'concepts' in concept_data and concept_data['concepts']:
+                                concept_data['concepts'] = [
+                                    Concept(**c) if isinstance(c, dict) else c
+                                    for c in concept_data['concepts']
+                                ]
+                            
+                            # Convert edges list
+                            if 'edges' in concept_data and concept_data['edges']:
+                                concept_data['edges'] = [
+                                    ConceptEdge(**e) if isinstance(e, dict) else e
+                                    for e in concept_data['edges']
+                                ]
+                            
+                            concept_graph = ConceptGraph(**concept_data)
+                            papers.concept_graphs_db[concept_id] = concept_graph
+                        else:
+                            papers.concept_graphs_db[concept_id] = concept_data
+                    except Exception as e:
+                        print(f"   ⚠️ Skipping corrupted concept graph {concept_id}: {e}")
+                
+                print(f"   ✅ Loaded {len(papers.concept_graphs_db)} concept graphs")
+            
+            # ============ RESTORE CHAT SESSIONS ============
             if loaded_chats:
-                chat.chat_sessions_db.update(loaded_chats)
-                print(f"   Loaded {len(loaded_chats)} chat sessions")
+                for chat_id, chat_data in loaded_chats.items():
+                    try:
+                        if isinstance(chat_data, dict):
+                            # Convert messages list
+                            if 'messages' in chat_data and chat_data['messages']:
+                                chat_data['messages'] = [
+                                    Message(**m) if isinstance(m, dict) else m
+                                    for m in chat_data['messages']
+                                ]
+                            
+                            # Convert tutoring_mode enum
+                            if 'tutoring_mode' in chat_data:
+                                if isinstance(chat_data['tutoring_mode'], str):
+                                    chat_data['tutoring_mode'] = TutoringMode(chat_data['tutoring_mode'])
+                            
+                            chat_session = ChatSession(**chat_data)
+                            chat.chat_sessions_db[chat_id] = chat_session
+                        else:
+                            chat.chat_sessions_db[chat_id] = chat_data
+                    except Exception as e:
+                        print(f"   ⚠️ Skipping corrupted chat session {chat_id}: {e}")
+                
+                print(f"   ✅ Loaded {len(chat.chat_sessions_db)} chat sessions")
+            
+            # ============ RESTORE QUIZZES ============
             if loaded_quizzes:
-                quiz.quizzes_db.update(loaded_quizzes)
-                print(f"   Loaded {len(loaded_quizzes)} quizzes")
+                for quiz_id, quiz_data in loaded_quizzes.items():
+                    try:
+                        if isinstance(quiz_data, dict):
+                            # Convert questions list
+                            if 'questions' in quiz_data and quiz_data['questions']:
+                                quiz_data['questions'] = [
+                                    Question(**q) if isinstance(q, dict) else q
+                                    for q in quiz_data['questions']
+                                ]
+                            
+                            quiz_obj = Quiz(**quiz_data)
+                            quiz.quizzes_db[quiz_id] = quiz_obj
+                        else:
+                            quiz.quizzes_db[quiz_id] = quiz_data
+                    except Exception as e:
+                        print(f"   ⚠️ Skipping corrupted quiz {quiz_id}: {e}")
+                
+                print(f"   ✅ Loaded {len(quiz.quizzes_db)} quizzes")
+            
+            # ============ RESTORE QUIZ RESULTS ============
             if loaded_results:
-                quiz.quiz_results_db.update(loaded_results)
-                print(f"   Loaded {len(loaded_results)} quiz results")
-            if loaded_progress:
-                progress.user_progress_db.update(loaded_progress)
-                print(f"   Loaded {len(loaded_progress)} user progress records")
+                for result_key, results_list in loaded_results.items():
+                    try:
+                        converted_results = []
+                        for result_data in results_list:
+                            if isinstance(result_data, dict):
+                                # Convert answers list
+                                if 'answers' in result_data and result_data['answers']:
+                                    result_data['answers'] = [
+                                        QuizAnswer(**a) if isinstance(a, dict) else a
+                                        for a in result_data['answers']
+                                    ]
+                                
+                                result = QuizResult(**result_data)
+                                converted_results.append(result)
+                            else:
+                                converted_results.append(result_data)
+                        
+                        quiz.quiz_results_db[result_key] = converted_results
+                    except Exception as e:
+                        print(f"   ⚠️ Skipping corrupted quiz results {result_key}: {e}")
+                
+                print(f"   ✅ Loaded {len(quiz.quiz_results_db)} quiz result sets")
+            
+            # ============ RESTORE USER PROGRESS ============
+            if loaded_understandings:
+                for progress_key, progress_data in loaded_understandings.items():
+                    try:
+                        if isinstance(progress_data, dict):
+                            # Convert concepts_mastery list
+                            if 'concepts_mastery' in progress_data and progress_data['concepts_mastery']:
+                                progress_data['concepts_mastery'] = [
+                                    ConceptMastery(**cm) if isinstance(cm, dict) else cm
+                                    for cm in progress_data['concepts_mastery']
+                                ]
+                            
+                            user_progress = UserProgress(**progress_data)
+                            progress.user_progress_db[progress_key] = user_progress
+                        else:
+                            progress.user_progress_db[progress_key] = progress_data
+                    except Exception as e:
+                        print(f"   ⚠️ Skipping corrupted progress {progress_key}: {e}")
+                
+                print(f"   ✅ Loaded {len(progress.user_progress_db)} user progress records")
             
             print("✅ Data restored successfully")
         except Exception as e:
@@ -78,7 +225,7 @@ async def lifespan(app: FastAPI):
                 chat.chat_sessions_db,
                 quiz.quizzes_db,
                 quiz.quiz_results_db,
-                progress.user_progress_db  # FIXED: was concept_understandings_db
+                progress.user_progress_db
             )
             print("✅ Data saved successfully")
         except Exception as e:
@@ -150,7 +297,7 @@ if PERSISTENCE_ENABLED:
                 chat.chat_sessions_db,
                 quiz.quizzes_db,
                 quiz.quiz_results_db,
-                progress.user_progress_db  # FIXED: was concept_understandings_db
+                progress.user_progress_db
             )
             return {"message": "Data saved successfully"}
         except Exception as e:
