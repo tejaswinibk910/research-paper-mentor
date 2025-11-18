@@ -4,11 +4,6 @@ Adaptive Study Mentor for Research Papers — generates concept maps, Socratic Q
 
 An AI-powered learning platform that transforms static research PDFs into interactive, personalized learning experiences with Socratic tutoring, adaptive quizzes, spaced repetition, and knowledge graphs.
 
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat&logo=python&logoColor=white)](https://www.python.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-
 ##  Features
 
 ###  Intelligent Paper Processing
