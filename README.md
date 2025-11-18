@@ -1,6 +1,6 @@
 # research-paper-mentor
 Adaptive Study Mentor for Research Papers — generates concept maps, Socratic Q&amp;A tutoring, and adaptive quizzes from any uploaded paper using LLMs.
-# 🎓 AI Research Paper Study Mentor
+#  AI Research Paper Study Mentor
 
 An AI-powered learning platform that transforms static research PDFs into interactive, personalized learning experiences with Socratic tutoring, adaptive quizzes, spaced repetition, and knowledge graphs.
 
@@ -9,37 +9,37 @@ An AI-powered learning platform that transforms static research PDFs into intera
 [![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-## 🌟 Features
+##  Features
 
-### 📚 Intelligent Paper Processing
+###  Intelligent Paper Processing
 - **PDF Upload & Analysis**: Automatically extract text, metadata, sections, and structure from research papers
 - **Semantic Chunking**: Smart text segmentation with overlap for optimal context preservation
 - **Vector Embeddings**: Local or cloud-based embeddings for semantic search (ChromaDB)
 
-### 🧠 AI-Powered Learning
+###  AI-Powered Learning
 - **Concept Extraction**: Automatically identify key concepts, definitions, and relationships
 - **Knowledge Graphs**: Visualize concept relationships with interactive graphs
 - **Paper Summaries**: Generate comprehensive summaries with key findings and difficulty assessment
 
-### 💬 Interactive Tutoring
+###  Interactive Tutoring
 Four distinct tutoring modes:
 - **Socratic Mode**: Learn through guided questioning
 - **Direct Mode**: Get straightforward explanations
 - **Hint-Based Mode**: Receive progressive hints
 - **Analogy Mode**: Understand through relatable comparisons
 
-### 📝 Adaptive Learning
+###  Adaptive Learning
 - **Quiz Generation**: Auto-generate multiple-choice, true/false, and short-answer questions
 - **Spaced Repetition**: SM-2 algorithm for optimal review scheduling
 - **Progress Tracking**: Monitor concept mastery, retention stats, and learning history
 
-### 🎯 User Experience
+###  User Experience
 - **Authentication**: Secure user registration and JWT-based login
 - **Multi-Paper Management**: Upload and manage multiple research papers
 - **Real-time Chat**: Interactive conversations with context-aware AI tutor
 - **Progress Dashboard**: Visualize learning progress and retention metrics
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 .
@@ -127,7 +127,7 @@ Four distinct tutoring modes:
 └── .gitignore
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -259,7 +259,7 @@ Four distinct tutoring modes:
    npm run start
    ```
 
-## 📖 Usage Guide
+##  Usage Guide
 
 ### 1. Register & Login
 - Navigate to `http://localhost:3000/register`
@@ -296,43 +296,7 @@ Four distinct tutoring modes:
 - See which concepts need review
 - Follow spaced repetition schedule
 
-## 🔧 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login and get JWT token
-
-### Papers
-- `POST /api/papers/upload` - Upload and process PDF
-- `GET /api/papers` - List all user papers
-- `GET /api/papers/{paper_id}` - Get paper details
-- `GET /api/papers/{paper_id}/download` - Download original PDF
-- `DELETE /api/papers/{paper_id}` - Delete paper
-- `GET /api/papers/{paper_id}/concepts` - Get concept graph
-- `GET /api/papers/{paper_id}/sections` - Get paper sections
-- `GET /api/papers/{paper_id}/summary` - Get paper summary
-
-### Chat
-- `POST /api/chat/sessions` - Create chat session
-- `GET /api/chat/sessions/{session_id}` - Get session details
-- `POST /api/chat/sessions/{session_id}/message` - Send message
-- `GET /api/chat/papers/{paper_id}/sessions` - List paper sessions
-
-### Quiz
-- `POST /api/quiz/generate` - Generate quiz
-- `GET /api/quiz/{quiz_id}` - Get quiz details
-- `POST /api/quiz/{quiz_id}/submit` - Submit quiz answers
-- `GET /api/quiz/{quiz_id}/results` - Get quiz results
-- `GET /api/quiz/paper/{paper_id}` - List paper quizzes
-- `DELETE /api/quiz/{quiz_id}` - Delete quiz
-
-### Progress
-- `GET /api/progress/{user_id}/{paper_id}/concepts` - Get concept progress
-- `POST /api/progress/{user_id}/{paper_id}/update` - Update progress
-- `GET /api/progress/{user_id}/{paper_id}/retention` - Get retention stats
-- `GET /api/progress/{user_id}/{paper_id}/due-for-review` - Get concepts due for review
-
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Backend
 - **FastAPI**: Modern Python web framework
@@ -353,7 +317,7 @@ Four distinct tutoring modes:
 - **Lucide React**: Icon library
 - **Context API**: State management
 
-## 🔐 Security Features
+##  Security Features
 
 - JWT-based authentication
 - Password hashing with bcrypt
@@ -362,7 +326,7 @@ Four distinct tutoring modes:
 - Input validation with Pydantic
 - SQL injection prevention via ORM
 
-## 📊 Key Algorithms
+##  Key Algorithms
 
 ### Spaced Repetition (SM-2)
 - Optimizes review intervals based on performance
@@ -379,7 +343,7 @@ Four distinct tutoring modes:
 - Relationship mapping
 - Difficulty assessment
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Backend Issues
 
