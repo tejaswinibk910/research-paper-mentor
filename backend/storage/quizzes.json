@@ -134,5 +134,93 @@
     "created_at": "2025-11-17T01:52:19.688119",
     "time_limit": null,
     "is_adaptive": false
+  },
+  "beab2433-3760-4a29-8787-495806756d41": {
+    "id": "beab2433-3760-4a29-8787-495806756d41",
+    "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+    "user_id": "5fef057f-bf66-45d3-a6bd-1a1353324156",
+    "title": "Concept Check Quiz - 3 Questions",
+    "questions": [
+      {
+        "id": "02fe1ee9-4252-4946-ae7b-610cf6fdb42b",
+        "type": "multiple_choice",
+        "difficulty": "easy",
+        "question": "What is the primary advantage of using a sparse gating network in a Mixture-of-Experts (MoE) layer?",
+        "options": [
+          "Reducing the number of expert networks",
+          "Increasing the dimensionality of the input data",
+          "Saving computation by avoiding unnecessary calculations",
+          "Improving the accuracy of the gating network"
+        ],
+        "correct_answer": "Saving computation by avoiding unnecessary calculations",
+        "explanation": "According to the paper, the output of the gating network G(x) is a sparse n-dimensional vector, which means that wherever G(x)i = 0, the computation of Ei(x) can be avoided, resulting in computational savings.",
+        "concept_id": "e62a476f-b31c-45f1-89c4-88057170f782",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "concepts": [],
+        "page_reference": null,
+        "distractor_explanations": {
+          "Reducing the number of expert networks": "This option is incorrect because the paper does not suggest that the number of expert networks is reduced, but rather that the computation is saved by avoiding unnecessary calculations.",
+          "Increasing the dimensionality of the input data": "This option is incorrect because the paper does not discuss increasing the dimensionality of the input data as a benefit of using a sparse gating network.",
+          "Improving the accuracy of the gating network": "This option is incorrect because while the paper does discuss the use of a gating network, it does not suggest that the primary advantage of using a sparse gating network is to improve its accuracy."
+        }
+      },
+      {
+        "id": "39c43089-1a1c-40e3-a71f-1995d89853be",
+        "type": "multiple_choice",
+        "difficulty": "easy",
+        "question": "What is the primary mechanism by which the Mixture of Experts (MoE) layer achieves computational savings?",
+        "options": [
+          "By using a smaller number of expert networks",
+          "By using a gating network to select a sparse combination of experts",
+          "By using expert networks with identical architectures and shared parameters",
+          "By processing all inputs through all expert networks in parallel"
+        ],
+        "correct_answer": "By using a gating network to select a sparse combination of experts",
+        "explanation": "According to the paper, the MoE layer consists of a set of expert networks and a gating network whose output is a sparse n-dimensional vector. This allows the model to save computation based on the sparsity of the output of the gating network, as indicated by the equation y = \u2211[i=1 to n] G(x)iEi(x), where G(x)i = 0 means Ei(x) does not need to be computed.",
+        "concept_id": "3ce57818-656d-481e-b5b8-c1fbec098e40",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "concepts": [],
+        "page_reference": null,
+        "distractor_explanations": {
+          "By using a smaller number of expert networks": "This option is incorrect because the number of expert networks does not directly determine the computational savings. The key factor is the sparsity introduced by the gating network.",
+          "By using expert networks with identical architectures and shared parameters": "This option is incorrect because, although the paper mentions that the expert networks have identical architectures, the parameters are separate, and this does not directly contribute to computational savings.",
+          "By processing all inputs through all expert networks in parallel": "This option is incorrect because it describes the opposite of what the MoE layer achieves. The MoE layer saves computation by not processing all inputs through all expert networks, thanks to the sparse selection made by the gating network."
+        }
+      },
+      {
+        "id": "dc5a9544-73ad-4fa7-9217-857efa47a449",
+        "type": "multiple_choice",
+        "difficulty": "easy",
+        "question": "What is the primary motivation behind using conditional computation in deep learning models?",
+        "options": [
+          "To reduce the number of model parameters",
+          "To increase model capacity without a proportional increase in computational costs",
+          "To simplify the process of model training",
+          "To reduce the size of the training dataset"
+        ],
+        "correct_answer": "To increase model capacity without a proportional increase in computational costs",
+        "explanation": "According to the paper, conditional computation is used to increase model capacity without a proportional increase in computational costs, as the entire model is not activated for every example, thus reducing the quadratic blow-up in training costs.",
+        "concept_id": "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "concepts": [],
+        "page_reference": null,
+        "distractor_explanations": {
+          "To reduce the number of model parameters": "This option is incorrect because conditional computation is not primarily about reducing the number of model parameters, but rather about reducing computational costs by activating parts of the network on a per-example basis.",
+          "To simplify the process of model training": "This option is incorrect because the paper does not mention simplifying the training process as a motivation for conditional computation. The focus is on reducing computational costs while increasing model capacity.",
+          "To reduce the size of the training dataset": "This option is incorrect because the paper actually mentions that increasing the size of the training dataset is one of the factors that leads to a quadratic blow-up in training costs, which conditional computation aims to mitigate."
+        }
+      }
+    ],
+    "total_questions": 3,
+    "target_concepts": [
+      "e62a476f-b31c-45f1-89c4-88057170f782",
+      "3ce57818-656d-481e-b5b8-c1fbec098e40",
+      "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89"
+    ],
+    "difficulty": "medium",
+    "difficulty_level": "easy",
+    "created_at": "2025-11-17T19:48:12.759187",
+    "time_limit": null,
+    "is_adaptive": false
   }
 }

@@ -10,7 +10,7 @@ try:
     from app.core.persistent_storage import storage, save_all_databases, load_all_databases
     PERSISTENCE_ENABLED = True
 except ImportError:
-    print("⚠️ Persistent storage not available - data will be lost on restart")
+    print("Persistent storage not available - data will be lost on restart")
     PERSISTENCE_ENABLED = False
 
 
@@ -18,15 +18,15 @@ except ImportError:
 async def lifespan(app: FastAPI):
     """Handle startup and shutdown events"""
     # Startup
-    print("🚀 Starting Research Paper Mentor API...")
+    print(" Starting Research Paper Mentor API...")
     
     # Initialize database (creates user tables)
-    print("📊 Initializing database...")
+    print(" Initializing database...")
     init_db()
-    print("✅ Database initialized")
+    print(" Database initialized")
     
     if PERSISTENCE_ENABLED:
-        print("💾 Loading saved data...")
+        print(" Loading saved data...")
         try:
             (loaded_papers, loaded_summaries, loaded_concepts,
              loaded_chats, loaded_quizzes, loaded_results,
@@ -63,9 +63,9 @@ async def lifespan(app: FastAPI):
                         else:
                             papers.papers_db[paper_id] = paper_data
                     except Exception as e:
-                        print(f"   ⚠️ Skipping corrupted paper {paper_id}: {e}")
+                        print(f"    Skipping corrupted paper {paper_id}: {e}")
                 
-                print(f"   ✅ Loaded {len(papers.papers_db)} papers")
+                print(f"    Loaded {len(papers.papers_db)} papers")
             
             # ============ RESTORE SUMMARIES ============
             if loaded_summaries:
@@ -77,9 +77,9 @@ async def lifespan(app: FastAPI):
                         else:
                             papers.summaries_db[summary_id] = summary_data
                     except Exception as e:
-                        print(f"   ⚠️ Skipping corrupted summary {summary_id}: {e}")
+                        print(f"    Skipping corrupted summary {summary_id}: {e}")
                 
-                print(f"   ✅ Loaded {len(papers.summaries_db)} summaries")
+                print(f"    Loaded {len(papers.summaries_db)} summaries")
             
             # ============ RESTORE CONCEPT GRAPHS ============
             if loaded_concepts:
@@ -105,9 +105,9 @@ async def lifespan(app: FastAPI):
                         else:
                             papers.concept_graphs_db[concept_id] = concept_data
                     except Exception as e:
-                        print(f"   ⚠️ Skipping corrupted concept graph {concept_id}: {e}")
+                        print(f"    Skipping corrupted concept graph {concept_id}: {e}")
                 
-                print(f"   ✅ Loaded {len(papers.concept_graphs_db)} concept graphs")
+                print(f"    Loaded {len(papers.concept_graphs_db)} concept graphs")
             
             # ============ RESTORE CHAT SESSIONS ============
             if loaded_chats:
@@ -131,9 +131,9 @@ async def lifespan(app: FastAPI):
                         else:
                             chat.chat_sessions_db[chat_id] = chat_data
                     except Exception as e:
-                        print(f"   ⚠️ Skipping corrupted chat session {chat_id}: {e}")
+                        print(f"    Skipping corrupted chat session {chat_id}: {e}")
                 
-                print(f"   ✅ Loaded {len(chat.chat_sessions_db)} chat sessions")
+                print(f"    Loaded {len(chat.chat_sessions_db)} chat sessions")
             
             # ============ RESTORE QUIZZES ============
             if loaded_quizzes:
@@ -152,9 +152,9 @@ async def lifespan(app: FastAPI):
                         else:
                             quiz.quizzes_db[quiz_id] = quiz_data
                     except Exception as e:
-                        print(f"   ⚠️ Skipping corrupted quiz {quiz_id}: {e}")
+                        print(f"    Skipping corrupted quiz {quiz_id}: {e}")
                 
-                print(f"   ✅ Loaded {len(quiz.quizzes_db)} quizzes")
+                print(f"    Loaded {len(quiz.quizzes_db)} quizzes")
             
             # ============ RESTORE QUIZ RESULTS ============
             if loaded_results:
@@ -177,9 +177,9 @@ async def lifespan(app: FastAPI):
                         
                         quiz.quiz_results_db[result_key] = converted_results
                     except Exception as e:
-                        print(f"   ⚠️ Skipping corrupted quiz results {result_key}: {e}")
+                        print(f"    Skipping corrupted quiz results {result_key}: {e}")
                 
-                print(f"   ✅ Loaded {len(quiz.quiz_results_db)} quiz result sets")
+                print(f"    Loaded {len(quiz.quiz_results_db)} quiz result sets")
             
             # ============ RESTORE USER PROGRESS ============
             if loaded_understandings:
@@ -198,25 +198,25 @@ async def lifespan(app: FastAPI):
                         else:
                             progress.user_progress_db[progress_key] = progress_data
                     except Exception as e:
-                        print(f"   ⚠️ Skipping corrupted progress {progress_key}: {e}")
+                        print(f"    Skipping corrupted progress {progress_key}: {e}")
                 
-                print(f"   ✅ Loaded {len(progress.user_progress_db)} user progress records")
+                print(f"    Loaded {len(progress.user_progress_db)} user progress records")
             
-            print("✅ Data restored successfully")
+            print(" Data restored successfully")
         except Exception as e:
-            print(f"❌ Error loading saved data: {e}")
+            print(f" Error loading saved data: {e}")
             import traceback
             traceback.print_exc()
     
-    print("✅ Server ready!")
+    print(" Server ready!")
     
     yield  # Server is running
     
     # Shutdown
-    print("🛑 Shutting down Research Paper Mentor API...")
+    print(" Shutting down Research Paper Mentor API...")
     
     if PERSISTENCE_ENABLED:
-        print("💾 Saving data...")
+        print(" Saving data...")
         try:
             save_all_databases(
                 papers.papers_db,
@@ -227,9 +227,9 @@ async def lifespan(app: FastAPI):
                 quiz.quiz_results_db,
                 progress.user_progress_db
             )
-            print("✅ Data saved successfully")
+            print(" Data saved successfully")
         except Exception as e:
-            print(f"❌ Error saving data: {e}")
+            print(f" Error saving data: {e}")
             import traceback
             traceback.print_exc()
 

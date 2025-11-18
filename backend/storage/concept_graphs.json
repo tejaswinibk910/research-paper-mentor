@@ -660,5 +660,1302 @@
     "num_concepts": 27,
     "num_edges": 21,
     "complexity_score": 0.5842450142450143
+  },
+  "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9": {
+    "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+    "concepts": [
+      {
+        "id": "fcda43fc-5956-40cf-899e-7c0e1b9fac7c",
+        "name": "Discrimination Law",
+        "type": "definition",
+        "definition": "A set of laws that prohibit discrimination based on certain characteristics.",
+        "explanation": "Discrimination law is designed to protect individuals from unfair treatment based on characteristics such as race, gender, and age. It provides a framework for detecting and regulating discriminatory decisions.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [
+          "560bbc2f-5efe-4db4-a82c-72fdd5871625"
+        ],
+        "related_concepts": [
+          "2008f51a-219b-4023-be64-63d0c3d491c6"
+        ],
+        "examples": [
+          "Title VII of the Civil Rights Act"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "2008f51a-219b-4023-be64-63d0c3d491c6",
+        "name": "Algorithmic Decision-Making",
+        "type": "definition",
+        "definition": "The use of algorithms to make decisions, often in place of human decision-makers.",
+        "explanation": "Algorithmic decision-making involves the use of mathematical models to make predictions or decisions. These models can be trained on data and can provide more objective and efficient decision-making.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Machine learning models for hiring decisions"
+        ],
+        "equations": [],
+        "importance_score": 0.9
+      },
+      {
+        "id": "bfc8bbd4-4a26-4b77-af24-3988becc72e5",
+        "name": "Opacity of Algorithms",
+        "type": "definition",
+        "definition": "The difficulty of understanding how an algorithm makes decisions.",
+        "explanation": "Algorithms can be complex and difficult to interpret, making it challenging to understand how they make decisions. This opacity can make it difficult to detect bias or discrimination in algorithmic decision-making.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Black box models"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "b849e9d8-84cb-48e6-bafe-609a20aa1fe1",
+        "name": "Transparency in Algorithmic Decision-Making",
+        "type": "definition",
+        "definition": "The ability to understand and interpret the decisions made by an algorithm.",
+        "explanation": "Transparency in algorithmic decision-making involves providing insight into how an algorithm makes decisions. This can include providing access to the data used to train the algorithm, the model itself, and the decisions made by the algorithm.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [
+          "bfc8bbd4-4a26-4b77-af24-3988becc72e5"
+        ],
+        "related_concepts": [
+          "6d32bad1-0e93-4e0f-b56d-c6b53583ca94"
+        ],
+        "examples": [
+          "Model interpretability techniques"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "6d32bad1-0e93-4e0f-b56d-c6b53583ca94",
+        "name": "Screening Decisions",
+        "type": "definition",
+        "definition": "Decisions made to select or reject candidates based on certain criteria.",
+        "explanation": "Screening decisions involve evaluating candidates based on certain characteristics or criteria. These decisions can be made by humans or algorithms and can have significant consequences for individuals and organizations.",
+        "difficulty": "beginner",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Hiring decisions",
+          "College admissions"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "42423b0b-11d1-4c32-a563-d1b0a22533ed",
+        "name": "Machine Learning",
+        "type": "definition",
+        "definition": "A type of artificial intelligence that involves training models on data to make predictions or decisions.",
+        "explanation": "Machine learning involves training models on data to make predictions or decisions. These models can be used for a variety of tasks, including image recognition, natural language processing, and decision-making.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [
+          "6aefd060-ad9c-412c-8cd8-46c418eb00c5"
+        ],
+        "related_concepts": [],
+        "examples": [
+          "Neural networks",
+          "Decision trees"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "99e37951-0225-4f15-91bc-995edbabedff",
+        "name": "Bias in Algorithmic Decision-Making",
+        "type": "definition",
+        "definition": "The presence of systematic errors or prejudices in algorithmic decision-making.",
+        "explanation": "Bias in algorithmic decision-making can occur when an algorithm is trained on biased data or when the algorithm itself is biased. This can result in unfair or discriminatory decisions.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "311169d9-202c-4fc2-ade0-8b65c9249973"
+        ],
+        "examples": [
+          "Racial bias in facial recognition systems"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "311169d9-202c-4fc2-ade0-8b65c9249973",
+        "name": "Fairness in Algorithmic Decision-Making",
+        "type": "definition",
+        "definition": "The absence of bias or discrimination in algorithmic decision-making.",
+        "explanation": "Fairness in algorithmic decision-making involves ensuring that decisions are made without bias or discrimination. This can be achieved through techniques such as data preprocessing, model regularization, and fairness metrics.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Fairness metrics for machine learning models"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "560bbc2f-5efe-4db4-a82c-72fdd5871625",
+        "name": "Regulation of Algorithmic Decision-Making",
+        "type": "definition",
+        "definition": "The use of laws, policies, and guidelines to govern the development and deployment of algorithms.",
+        "explanation": "Regulation of algorithmic decision-making involves using laws, policies, and guidelines to ensure that algorithms are developed and deployed in a responsible and fair manner. This can include requirements for transparency, accountability, and fairness.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "General Data Protection Regulation (GDPR)"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "a7b7b408-c901-4893-8bde-44dae99a20a1",
+        "name": "Human Decision-Making",
+        "type": "definition",
+        "definition": "The process by which humans make decisions, often involving intuition, experience, and judgment.",
+        "explanation": "Human decision-making involves a complex process of intuition, experience, and judgment. Humans can make decisions based on a variety of factors, including personal biases, emotions, and values.",
+        "difficulty": "beginner",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "29acb60a-fbcd-44c6-8de2-3da1e3133c30"
+        ],
+        "examples": [
+          "Hiring decisions made by human managers"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "29acb60a-fbcd-44c6-8de2-3da1e3133c30",
+        "name": "Hybrid Decision-Making",
+        "type": "definition",
+        "definition": "The use of both human and algorithmic decision-making in a single process.",
+        "explanation": "Hybrid decision-making involves combining human and algorithmic decision-making to leverage the strengths of both approaches. This can include using algorithms to provide recommendations or insights that are then reviewed and approved by humans.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Human-in-the-loop machine learning"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "1f7ae5d7-a5c0-4bf7-a626-c18cb6911fae",
+        "name": "Attribution of Disparities",
+        "type": "definition",
+        "definition": "The process of identifying the causes of disparities in outcomes or decisions.",
+        "explanation": "Attribution of disparities involves identifying the causes of disparities in outcomes or decisions. This can include analyzing data to determine whether disparities are due to algorithmic bias, human bias, or other factors.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Disparities in hiring outcomes"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "48302086-bcac-4426-862f-6f48ad192ec3",
+        "name": "Decomposition of Disparities",
+        "type": "definition",
+        "definition": "The process of breaking down disparities into their component parts to understand their causes.",
+        "explanation": "Decomposition of disparities involves breaking down disparities into their component parts to understand their causes. This can include analyzing data to determine the contribution of different factors to disparities in outcomes or decisions.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Decomposing disparities in college admissions outcomes"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "31c365be-0127-4679-8e82-ee64ef064829",
+        "name": "Algorithmic Auditing",
+        "type": "definition",
+        "definition": "The process of examining and evaluating the performance of algorithms.",
+        "explanation": "Algorithmic auditing involves examining and evaluating the performance of algorithms to ensure that they are functioning as intended and without bias. This can include testing algorithms for fairness, accuracy, and transparency.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "d5cdd7c6-61f5-449b-b637-b0bf087336de"
+        ],
+        "examples": [
+          "Auditing machine learning models for bias"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "d5cdd7c6-61f5-449b-b637-b0bf087336de",
+        "name": "Model Interpretability",
+        "type": "definition",
+        "definition": "The ability to understand and explain the decisions made by a machine learning model.",
+        "explanation": "Model interpretability involves understanding and explaining the decisions made by a machine learning model. This can include techniques such as feature importance, partial dependence plots, and SHAP values.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Using SHAP values to explain model predictions"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "6aefd060-ad9c-412c-8cd8-46c418eb00c5",
+        "name": "Data Preprocessing",
+        "type": "definition",
+        "definition": "The process of cleaning, transforming, and preparing data for use in machine learning models.",
+        "explanation": "Data preprocessing involves cleaning, transforming, and preparing data for use in machine learning models. This can include techniques such as data normalization, feature scaling, and handling missing values.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Normalizing data for machine learning models"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "b4977770-ff93-4af1-9160-e3c89dd75252",
+        "name": "Fairness Metrics",
+        "type": "definition",
+        "definition": "Metrics used to evaluate the fairness of machine learning models.",
+        "explanation": "Fairness metrics involve evaluating the fairness of machine learning models using metrics such as demographic parity, equalized odds, and calibration. These metrics can help identify bias in models and ensure that they are fair and unbiased.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Using demographic parity to evaluate model fairness"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "04eced57-3234-41cd-baea-dcf7e5200c60",
+        "name": "Regulatory Frameworks",
+        "type": "definition",
+        "definition": "Frameworks that provide guidelines and regulations for the development and deployment of algorithms.",
+        "explanation": "Regulatory frameworks involve providing guidelines and regulations for the development and deployment of algorithms. This can include frameworks such as the General Data Protection Regulation (GDPR) and the Fair Credit Reporting Act (FCRA).",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "General Data Protection Regulation (GDPR)"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "b92b612e-3298-4436-97b0-c0b98cdc44c4",
+        "name": "Accountability in Algorithmic Decision-Making",
+        "type": "definition",
+        "definition": "The ability to hold individuals or organizations responsible for the decisions made by algorithms.",
+        "explanation": "Accountability in algorithmic decision-making involves holding individuals or organizations responsible for the decisions made by algorithms. This can include mechanisms such as auditing, testing, and evaluation to ensure that algorithms are functioning as intended and without bias.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "0a9454e3-9c13-4415-9c2b-594b27901987"
+        ],
+        "examples": [
+          "Holding companies accountable for algorithmic bias"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "0a9454e3-9c13-4415-9c2b-594b27901987",
+        "name": "Human Oversight",
+        "type": "definition",
+        "definition": "The process of having humans review and approve the decisions made by algorithms.",
+        "explanation": "Human oversight involves having humans review and approve the decisions made by algorithms. This can include mechanisms such as human-in-the-loop machine learning and model interpretability techniques.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Human-in-the-loop machine learning"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "260f29ee-0306-4e74-be30-e0f99264c7c8",
+        "name": "Algorithmic Transparency",
+        "type": "definition",
+        "definition": "The ability to understand and explain the decisions made by algorithms.",
+        "explanation": "Algorithmic transparency involves understanding and explaining the decisions made by algorithms. This can include techniques such as model interpretability, feature importance, and partial dependence plots.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Using model interpretability techniques to explain algorithmic decisions"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "f8893ea4-eab9-4c08-8d5c-d85f73e61330",
+        "name": "Bias Detection",
+        "type": "definition",
+        "definition": "The process of identifying and detecting bias in algorithms and data.",
+        "explanation": "Bias detection involves identifying and detecting bias in algorithms and data. This can include techniques such as data preprocessing, model regularization, and fairness metrics.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Detecting bias in machine learning models"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "2f0f3091-8e20-4762-8af6-566323313c2b",
+        "name": "Debiasing",
+        "type": "definition",
+        "definition": "The process of removing or reducing bias in algorithms and data.",
+        "explanation": "Debiasing involves removing or reducing bias in algorithms and data. This can include techniques such as data preprocessing, model regularization, and fairness metrics.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "99e37951-0225-4f15-91bc-995edbabedff"
+        ],
+        "examples": [
+          "Debiasing machine learning models"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "026ecf12-0c1b-4d64-b0ca-71e4bfffb181",
+        "name": "Fairness-Accuracy Tradeoff",
+        "type": "definition",
+        "definition": "The tradeoff between fairness and accuracy in machine learning models.",
+        "explanation": "Fairness-accuracy tradeoff involves balancing the need for fairness and accuracy in machine learning models. This can include techniques such as regularization, early stopping, and ensemble methods.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "311169d9-202c-4fc2-ade0-8b65c9249973"
+        ],
+        "examples": [
+          "Balancing fairness and accuracy in machine learning models"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "0ebcff4e-6003-49fd-b5f6-614fe437a349",
+        "name": "Disparate Impact",
+        "type": "definition",
+        "definition": "The phenomenon where a policy or practice has a disproportionate impact on a particular group.",
+        "explanation": "Disparate impact involves a policy or practice having a disproportionate impact on a particular group. This can include techniques such as statistical analysis and fairness metrics to identify and mitigate disparate impact.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Disparate impact in hiring practices"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "e25d807f-53db-42ca-bc7e-cf2550b89aa3",
+        "name": "Algorithmic Decision-Support Systems",
+        "type": "definition",
+        "definition": "Systems that use algorithms to provide decision-support and recommendations.",
+        "explanation": "Algorithmic decision-support systems involve using algorithms to provide decision-support and recommendations. This can include systems such as expert systems, decision trees, and machine learning models.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Clinical decision-support systems"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "e5ffb602-ad05-4b72-9c41-e0955e1a2d04",
+        "name": "Human-Algorithm Collaboration",
+        "type": "definition",
+        "definition": "The collaboration between humans and algorithms to make decisions.",
+        "explanation": "Human-algorithm collaboration involves the collaboration between humans and algorithms to make decisions. This can include mechanisms such as human-in-the-loop machine learning and model interpretability techniques.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Human-in-the-loop machine learning"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "1c71a9c2-4b8a-46ec-8143-1c086d22910c",
+        "name": "Explainability",
+        "type": "definition",
+        "definition": "The ability to explain and understand the decisions made by algorithms.",
+        "explanation": "Explainability involves explaining and understanding the decisions made by algorithms. This can include techniques such as model interpretability, feature importance, and partial dependence plots.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "d5cdd7c6-61f5-449b-b637-b0bf087336de"
+        ],
+        "examples": [
+          "Using model interpretability techniques to explain algorithmic decisions"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "42023656-c414-47b5-96b8-dd35b64b80d2",
+        "name": "Trustworthiness",
+        "type": "definition",
+        "definition": "The degree to which an algorithm or system is trustworthy and reliable.",
+        "explanation": "Trustworthiness involves the degree to which an algorithm or system is trustworthy and reliable. This can include mechanisms such as auditing, testing, and evaluation to ensure that algorithms are functioning as intended and without bias.",
+        "difficulty": "intermediate",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "b92b612e-3298-4436-97b0-c0b98cdc44c4"
+        ],
+        "examples": [
+          "Evaluating the trustworthiness of machine learning models"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "02bbb092-a97e-4c99-b096-32fdb920f528",
+        "name": "Value Alignment",
+        "type": "definition",
+        "definition": "The alignment of an algorithm or system with human values and ethics.",
+        "explanation": "Value alignment involves aligning an algorithm or system with human values and ethics. This can include mechanisms such as value-based optimization, fairness metrics, and human oversight.",
+        "difficulty": "advanced",
+        "paper_id": "ba4afb9e-74b2-4f72-aa88-39eb6486c8a9",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "311169d9-202c-4fc2-ade0-8b65c9249973"
+        ],
+        "examples": [
+          "Aligning machine learning models with human values"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "fcda43fc-5956-40cf-899e-7c0e1b9fac7c",
+        "target_id": "2008f51a-219b-4023-be64-63d0c3d491c6",
+        "relationship_type": "related",
+        "strength": 0.8
+      },
+      {
+        "source_id": "2008f51a-219b-4023-be64-63d0c3d491c6",
+        "target_id": "bfc8bbd4-4a26-4b77-af24-3988becc72e5",
+        "relationship_type": "part_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "bfc8bbd4-4a26-4b77-af24-3988becc72e5",
+        "target_id": "b849e9d8-84cb-48e6-bafe-609a20aa1fe1",
+        "relationship_type": "prerequisite",
+        "strength": 0.7
+      },
+      {
+        "source_id": "b849e9d8-84cb-48e6-bafe-609a20aa1fe1",
+        "target_id": "6d32bad1-0e93-4e0f-b56d-c6b53583ca94",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "42423b0b-11d1-4c32-a563-d1b0a22533ed",
+        "target_id": "2008f51a-219b-4023-be64-63d0c3d491c6",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "99e37951-0225-4f15-91bc-995edbabedff",
+        "target_id": "311169d9-202c-4fc2-ade0-8b65c9249973",
+        "relationship_type": "related",
+        "strength": 0.9
+      },
+      {
+        "source_id": "560bbc2f-5efe-4db4-a82c-72fdd5871625",
+        "target_id": "fcda43fc-5956-40cf-899e-7c0e1b9fac7c",
+        "relationship_type": "prerequisite",
+        "strength": 0.8
+      },
+      {
+        "source_id": "a7b7b408-c901-4893-8bde-44dae99a20a1",
+        "target_id": "29acb60a-fbcd-44c6-8de2-3da1e3133c30",
+        "relationship_type": "related",
+        "strength": 0.7
+      },
+      {
+        "source_id": "1f7ae5d7-a5c0-4bf7-a626-c18cb6911fae",
+        "target_id": "48302086-bcac-4426-862f-6f48ad192ec3",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "31c365be-0127-4679-8e82-ee64ef064829",
+        "target_id": "d5cdd7c6-61f5-449b-b637-b0bf087336de",
+        "relationship_type": "related",
+        "strength": 0.9
+      },
+      {
+        "source_id": "6aefd060-ad9c-412c-8cd8-46c418eb00c5",
+        "target_id": "42423b0b-11d1-4c32-a563-d1b0a22533ed",
+        "relationship_type": "prerequisite",
+        "strength": 0.8
+      },
+      {
+        "source_id": "b4977770-ff93-4af1-9160-e3c89dd75252",
+        "target_id": "311169d9-202c-4fc2-ade0-8b65c9249973",
+        "relationship_type": "part_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "04eced57-3234-41cd-baea-dcf7e5200c60",
+        "target_id": "560bbc2f-5efe-4db4-a82c-72fdd5871625",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "b92b612e-3298-4436-97b0-c0b98cdc44c4",
+        "target_id": "0a9454e3-9c13-4415-9c2b-594b27901987",
+        "relationship_type": "related",
+        "strength": 0.7
+      },
+      {
+        "source_id": "260f29ee-0306-4e74-be30-e0f99264c7c8",
+        "target_id": "b849e9d8-84cb-48e6-bafe-609a20aa1fe1",
+        "relationship_type": "part_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "f8893ea4-eab9-4c08-8d5c-d85f73e61330",
+        "target_id": "99e37951-0225-4f15-91bc-995edbabedff",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "2f0f3091-8e20-4762-8af6-566323313c2b",
+        "target_id": "99e37951-0225-4f15-91bc-995edbabedff",
+        "relationship_type": "related",
+        "strength": 0.7
+      },
+      {
+        "source_id": "026ecf12-0c1b-4d64-b0ca-71e4bfffb181",
+        "target_id": "311169d9-202c-4fc2-ade0-8b65c9249973",
+        "relationship_type": "related",
+        "strength": 0.8
+      },
+      {
+        "source_id": "0ebcff4e-6003-49fd-b5f6-614fe437a349",
+        "target_id": "fcda43fc-5956-40cf-899e-7c0e1b9fac7c",
+        "relationship_type": "part_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "e25d807f-53db-42ca-bc7e-cf2550b89aa3",
+        "target_id": "2008f51a-219b-4023-be64-63d0c3d491c6",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "e5ffb602-ad05-4b72-9c41-e0955e1a2d04",
+        "target_id": "29acb60a-fbcd-44c6-8de2-3da1e3133c30",
+        "relationship_type": "part_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "1c71a9c2-4b8a-46ec-8143-1c086d22910c",
+        "target_id": "d5cdd7c6-61f5-449b-b637-b0bf087336de",
+        "relationship_type": "related",
+        "strength": 0.9
+      },
+      {
+        "source_id": "42023656-c414-47b5-96b8-dd35b64b80d2",
+        "target_id": "b92b612e-3298-4436-97b0-c0b98cdc44c4",
+        "relationship_type": "related",
+        "strength": 0.8
+      },
+      {
+        "source_id": "02bbb092-a97e-4c99-b096-32fdb920f528",
+        "target_id": "311169d9-202c-4fc2-ade0-8b65c9249973",
+        "relationship_type": "related",
+        "strength": 0.7
+      }
+    ],
+    "num_concepts": 30,
+    "num_edges": 24,
+    "complexity_score": 0.6338850574712644
+  },
+  "af31a1f9-c4a1-46b7-8561-e04e9c60852f": {
+    "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+    "concepts": [
+      {
+        "id": "e62a476f-b31c-45f1-89c4-88057170f782",
+        "name": "Neural Network",
+        "type": "definition",
+        "definition": "A computational model inspired by biological neural networks.",
+        "explanation": "Neural networks consist of interconnected nodes (neurons) organized in layers, which process and transmit information.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "68fe8ddd-8715-471d-a215-86e7942747f2",
+          "a379b72a-d190-4d24-bedf-94f3276f0b50",
+          "3188d3f5-e6d4-43a8-b78d-a0398f41bfca"
+        ],
+        "examples": [
+          "Convolutional Neural Networks for image recognition"
+        ],
+        "equations": [],
+        "importance_score": 0.9
+      },
+      {
+        "id": "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89",
+        "name": "Conditional Computation",
+        "type": "definition",
+        "definition": "A technique to increase model capacity without a proportional increase in computational costs.",
+        "explanation": "Conditional computation involves activating parts of a network on a per-example basis, reducing computational costs.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [
+          "e62a476f-b31c-45f1-89c4-88057170f782"
+        ],
+        "related_concepts": [],
+        "examples": [
+          "Mixture of Experts"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "3ce57818-656d-481e-b5b8-c1fbec098e40",
+        "name": "Mixture of Experts (MoE)",
+        "type": "definition",
+        "definition": "A neural network component that combines multiple expert networks with a gating network.",
+        "explanation": "The MoE consists of a set of expert networks and a gating network that selects a sparse combination of experts to process each input.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Language modeling and machine translation"
+        ],
+        "equations": [
+          "y = \u2211[G(x)iEi(x)]"
+        ],
+        "importance_score": 0.9
+      },
+      {
+        "id": "bec37db3-3c1a-430f-8688-01e7b7992958",
+        "name": "Sparsely-Gated Mixture-of-Experts Layer",
+        "type": "definition",
+        "definition": "A type of MoE layer that uses a sparse gating function to select experts.",
+        "explanation": "The sparsely-gated MoE layer reduces computational costs by only evaluating a subset of experts for each input.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "1ade1504-e97e-49b9-83df-2f5b6a93aeba"
+        ],
+        "examples": [
+          "Language modeling and machine translation"
+        ],
+        "equations": [],
+        "importance_score": 0.8
+      },
+      {
+        "id": "171a1984-a42b-4f62-9b87-b7e63c142a3d",
+        "name": "Gating Network",
+        "type": "definition",
+        "definition": "A neural network that selects a sparse combination of experts to process each input.",
+        "explanation": "The gating network is trained jointly with the expert networks using back-propagation.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Softmax gating and noisy top-k gating"
+        ],
+        "equations": [
+          "G\u03c3(x) = Softmax(x \u00b7 Wg)"
+        ],
+        "importance_score": 0.7
+      },
+      {
+        "id": "f56ecbaf-43e7-46e0-8017-522c2e58cc13",
+        "name": "Softmax Gating",
+        "type": "definition",
+        "definition": "A type of gating function that uses the softmax function to select experts.",
+        "explanation": "Softmax gating is a simple and effective way to select experts, but may not be suitable for very large models.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Language modeling"
+        ],
+        "equations": [
+          "G\u03c3(x) = Softmax(x \u00b7 Wg)"
+        ],
+        "importance_score": 0.6
+      },
+      {
+        "id": "eaefbbae-94d4-4566-9856-6ee4c072940a",
+        "name": "Noisy Top-K Gating",
+        "type": "definition",
+        "definition": "A type of gating function that uses noise and sparsity to select experts.",
+        "explanation": "Noisy top-k gating is a more efficient and effective way to select experts, especially for very large models.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Language modeling and machine translation"
+        ],
+        "equations": [
+          "G(x) = Softmax(KeepTopK(H(x), k))"
+        ],
+        "importance_score": 0.7
+      },
+      {
+        "id": "d4730bf0-7233-457b-b359-6c1aa6a38907",
+        "name": "Shrinking Batch Problem",
+        "type": "definition",
+        "definition": "A problem that occurs when the batch size decreases due to conditional computation.",
+        "explanation": "The shrinking batch problem can be addressed by increasing the batch size or using techniques such as data parallelism and model parallelism.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Distributed training of MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "a379b72a-d190-4d24-bedf-94f3276f0b50",
+        "name": "Data Parallelism",
+        "type": "definition",
+        "definition": "A technique to increase the batch size by processing multiple batches in parallel.",
+        "explanation": "Data parallelism can be used to increase the batch size and reduce the shrinking batch problem.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Distributed training of MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "68fe8ddd-8715-471d-a215-86e7942747f2",
+        "name": "Model Parallelism",
+        "type": "definition",
+        "definition": "A technique to increase the batch size by processing different parts of the model in parallel.",
+        "explanation": "Model parallelism can be used to increase the batch size and reduce the shrinking batch problem.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Distributed training of MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "2b921c52-4681-400f-a924-851005efdb2f",
+        "name": "Hierarchical Mixture of Experts",
+        "type": "definition",
+        "definition": "A type of MoE that uses multiple levels of experts and gating networks.",
+        "explanation": "Hierarchical MoE can be used to increase the capacity of the model and reduce the computational costs.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Language modeling and machine translation"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "bf2c75a4-b53e-4614-bff7-d8d01509523b",
+        "name": "Convolutional Application of MoE",
+        "type": "definition",
+        "definition": "A technique to apply the MoE to each position in the input sequence.",
+        "explanation": "Convolutional application of MoE can be used to increase the capacity of the model and reduce the computational costs.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Language modeling and machine translation"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "1ade1504-e97e-49b9-83df-2f5b6a93aeba",
+        "name": "Load Balancing",
+        "type": "definition",
+        "definition": "A technique to distribute the computational costs evenly across the devices.",
+        "explanation": "Load balancing is important to reduce the shrinking batch problem and increase the efficiency of the model.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Distributed training of MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "c3b7f4cb-3617-45f9-8cc6-def453e79537",
+        "name": "Back-Propagation",
+        "type": "definition",
+        "definition": "An algorithm to train neural networks by minimizing the loss function.",
+        "explanation": "Back-propagation is used to train the MoE model, including the gating network and the expert networks.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [
+          "e62a476f-b31c-45f1-89c4-88057170f782"
+        ],
+        "related_concepts": [
+          "a6ef648e-ffe6-429c-a719-9a6d44420d7a"
+        ],
+        "examples": [
+          "Training of MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.7
+      },
+      {
+        "id": "a6ef648e-ffe6-429c-a719-9a6d44420d7a",
+        "name": "REINFORCE",
+        "type": "definition",
+        "definition": "An algorithm to train neural networks using reinforcement learning.",
+        "explanation": "REINFORCE is used to train the gating network in some MoE models.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Training of MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "f40bfe8a-4d81-4663-9e31-d3e2b6cbe278",
+        "name": "Parameterized Weight Matrix",
+        "type": "definition",
+        "definition": "A technique to parameterize the weight matrix of a neural network.",
+        "explanation": "Parameterized weight matrix is used in some MoE models to reduce the computational costs.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "MoE models with parameterized weight matrix"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "3188d3f5-e6d4-43a8-b78d-a0398f41bfca",
+        "name": "Block-Wise Dropout",
+        "type": "definition",
+        "definition": "A technique to drop out blocks of neurons in a neural network.",
+        "explanation": "Block-wise dropout is used in some MoE models to reduce the computational costs.",
+        "difficulty": "advanced",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "MoE models with block-wise dropout"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "ff976d82-73ae-4ef3-a93f-94373d2aec6b",
+        "name": "Language Modeling",
+        "type": "definition",
+        "definition": "A task to predict the next word in a sequence of words.",
+        "explanation": "Language modeling is a common application of MoE models.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Language modeling using MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "cb6a9059-c4cd-42d9-b81e-aee6a7bdcdf9",
+        "name": "Machine Translation",
+        "type": "definition",
+        "definition": "A task to translate text from one language to another.",
+        "explanation": "Machine translation is a common application of MoE models.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Machine translation using MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.6
+      },
+      {
+        "id": "fad5720c-86d7-4e34-a608-a32e8dfb7ca6",
+        "name": "LSTM",
+        "type": "definition",
+        "definition": "A type of recurrent neural network.",
+        "explanation": "LSTM is used in some MoE models to process sequential data.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [
+          "ff976d82-73ae-4ef3-a93f-94373d2aec6b",
+          "cb6a9059-c4cd-42d9-b81e-aee6a7bdcdf9"
+        ],
+        "examples": [
+          "LSTM in MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.5
+      },
+      {
+        "id": "7ac7c6df-eef6-4df9-bfc6-d630be4fa077",
+        "name": "Gaussian Noise",
+        "type": "definition",
+        "definition": "A type of noise that is added to the input of a neural network.",
+        "explanation": "Gaussian noise is used in some MoE models to improve the robustness of the model.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Gaussian noise in MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "1567d05c-fe52-4b1f-9137-7ae1671be71b",
+        "name": "Softplus",
+        "type": "definition",
+        "definition": "A type of activation function.",
+        "explanation": "Softplus is used in some MoE models to improve the robustness of the model.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Softplus in MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "4cde744a-f8c3-480e-a942-713da3a5d58e",
+        "name": "KeepTopK",
+        "type": "definition",
+        "definition": "A function that keeps the top k elements of a vector.",
+        "explanation": "KeepTopK is used in some MoE models to select the top k experts.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "KeepTopK in MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      },
+      {
+        "id": "16aa4cf2-dd55-46b0-b42b-66755ed5eb49",
+        "name": "Standard Normal",
+        "type": "definition",
+        "definition": "A type of probability distribution.",
+        "explanation": "Standard normal is used in some MoE models to add noise to the input.",
+        "difficulty": "intermediate",
+        "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+        "section_id": null,
+        "page_numbers": [],
+        "prerequisites": [],
+        "related_concepts": [],
+        "examples": [
+          "Standard normal in MoE models"
+        ],
+        "equations": [],
+        "importance_score": 0.4
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "e62a476f-b31c-45f1-89c4-88057170f782",
+        "target_id": "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89",
+        "relationship_type": "prerequisite",
+        "strength": 0.8
+      },
+      {
+        "source_id": "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89",
+        "target_id": "3ce57818-656d-481e-b5b8-c1fbec098e40",
+        "relationship_type": "part_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "3ce57818-656d-481e-b5b8-c1fbec098e40",
+        "target_id": "bec37db3-3c1a-430f-8688-01e7b7992958",
+        "relationship_type": "part_of",
+        "strength": 0.95
+      },
+      {
+        "source_id": "bec37db3-3c1a-430f-8688-01e7b7992958",
+        "target_id": "171a1984-a42b-4f62-9b87-b7e63c142a3d",
+        "relationship_type": "part_of",
+        "strength": 0.9
+      },
+      {
+        "source_id": "171a1984-a42b-4f62-9b87-b7e63c142a3d",
+        "target_id": "f56ecbaf-43e7-46e0-8017-522c2e58cc13",
+        "relationship_type": "example_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "171a1984-a42b-4f62-9b87-b7e63c142a3d",
+        "target_id": "eaefbbae-94d4-4566-9856-6ee4c072940a",
+        "relationship_type": "example_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "e62a476f-b31c-45f1-89c4-88057170f782",
+        "target_id": "c3b7f4cb-3617-45f9-8cc6-def453e79537",
+        "relationship_type": "prerequisite",
+        "strength": 0.9
+      },
+      {
+        "source_id": "c3b7f4cb-3617-45f9-8cc6-def453e79537",
+        "target_id": "a6ef648e-ffe6-429c-a719-9a6d44420d7a",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "3ce57818-656d-481e-b5b8-c1fbec098e40",
+        "target_id": "2b921c52-4681-400f-a924-851005efdb2f",
+        "relationship_type": "example_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "bec37db3-3c1a-430f-8688-01e7b7992958",
+        "target_id": "bf2c75a4-b53e-4614-bff7-d8d01509523b",
+        "relationship_type": "example_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "e62a476f-b31c-45f1-89c4-88057170f782",
+        "target_id": "fad5720c-86d7-4e34-a608-a32e8dfb7ca6",
+        "relationship_type": "example_of",
+        "strength": 0.7
+      },
+      {
+        "source_id": "fad5720c-86d7-4e34-a608-a32e8dfb7ca6",
+        "target_id": "ff976d82-73ae-4ef3-a93f-94373d2aec6b",
+        "relationship_type": "related",
+        "strength": 0.8
+      },
+      {
+        "source_id": "fad5720c-86d7-4e34-a608-a32e8dfb7ca6",
+        "target_id": "cb6a9059-c4cd-42d9-b81e-aee6a7bdcdf9",
+        "relationship_type": "related",
+        "strength": 0.8
+      },
+      {
+        "source_id": "e62a476f-b31c-45f1-89c4-88057170f782",
+        "target_id": "68fe8ddd-8715-471d-a215-86e7942747f2",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "e62a476f-b31c-45f1-89c4-88057170f782",
+        "target_id": "a379b72a-d190-4d24-bedf-94f3276f0b50",
+        "relationship_type": "related",
+        "strength": 0.6
+      },
+      {
+        "source_id": "bec37db3-3c1a-430f-8688-01e7b7992958",
+        "target_id": "1ade1504-e97e-49b9-83df-2f5b6a93aeba",
+        "relationship_type": "related",
+        "strength": 0.5
+      },
+      {
+        "source_id": "171a1984-a42b-4f62-9b87-b7e63c142a3d",
+        "target_id": "f40bfe8a-4d81-4663-9e31-d3e2b6cbe278",
+        "relationship_type": "part_of",
+        "strength": 0.8
+      },
+      {
+        "source_id": "e62a476f-b31c-45f1-89c4-88057170f782",
+        "target_id": "3188d3f5-e6d4-43a8-b78d-a0398f41bfca",
+        "relationship_type": "related",
+        "strength": 0.5
+      }
+    ],
+    "num_concepts": 24,
+    "num_edges": 18,
+    "complexity_score": 0.5862318840579711
   }
 }

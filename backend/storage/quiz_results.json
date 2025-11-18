@@ -112,5 +112,83 @@
         "823719c1-d9c0-405b-b19a-6704fe35b603": 0.0
       }
     }
+  ],
+  "5fef057f-bf66-45d3-a6bd-1a1353324156_af31a1f9-c4a1-46b7-8561-e04e9c60852f": [
+    {
+      "quiz_id": "beab2433-3760-4a29-8787-495806756d41",
+      "user_id": "5fef057f-bf66-45d3-a6bd-1a1353324156",
+      "paper_id": "af31a1f9-c4a1-46b7-8561-e04e9c60852f",
+      "answers": [
+        {
+          "question_id": "02fe1ee9-4252-4946-ae7b-610cf6fdb42b",
+          "user_answer": "Reducing the number of expert networks",
+          "is_correct": false,
+          "time_taken_seconds": null,
+          "concept_id": "e62a476f-b31c-45f1-89c4-88057170f782"
+        },
+        {
+          "question_id": "39c43089-1a1c-40e3-a71f-1995d89853be",
+          "user_answer": "By using a smaller number of expert networks",
+          "is_correct": false,
+          "time_taken_seconds": null,
+          "concept_id": "3ce57818-656d-481e-b5b8-c1fbec098e40"
+        },
+        {
+          "question_id": "dc5a9544-73ad-4fa7-9217-857efa47a449",
+          "user_answer": "To increase model capacity without a proportional increase in computational costs",
+          "is_correct": true,
+          "time_taken_seconds": null,
+          "concept_id": "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89"
+        }
+      ],
+      "score": 33.33333333333333,
+      "score_percentage": 33.33333333333333,
+      "total_questions": 3,
+      "correct_answers": 1,
+      "time_taken": 0,
+      "submitted_at": "2025-11-17T19:49:11.434645",
+      "completed_at": "2025-11-17T19:49:11.434645",
+      "question_results": [
+        {
+          "question_id": "02fe1ee9-4252-4946-ae7b-610cf6fdb42b",
+          "question": "What is the primary advantage of using a sparse gating network in a Mixture-of-Experts (MoE) layer?",
+          "user_answer": "Reducing the number of expert networks",
+          "correct_answer": "Saving computation by avoiding unnecessary calculations",
+          "is_correct": false,
+          "explanation": "According to the paper, the output of the gating network G(x) is a sparse n-dimensional vector, which means that wherever G(x)i = 0, the computation of Ei(x) can be avoided, resulting in computational savings.",
+          "concept_id": "e62a476f-b31c-45f1-89c4-88057170f782"
+        },
+        {
+          "question_id": "39c43089-1a1c-40e3-a71f-1995d89853be",
+          "question": "What is the primary mechanism by which the Mixture of Experts (MoE) layer achieves computational savings?",
+          "user_answer": "By using a smaller number of expert networks",
+          "correct_answer": "By using a gating network to select a sparse combination of experts",
+          "is_correct": false,
+          "explanation": "According to the paper, the MoE layer consists of a set of expert networks and a gating network whose output is a sparse n-dimensional vector. This allows the model to save computation based on the sparsity of the output of the gating network, as indicated by the equation y = \u2211[i=1 to n] G(x)iEi(x), where G(x)i = 0 means Ei(x) does not need to be computed.",
+          "concept_id": "3ce57818-656d-481e-b5b8-c1fbec098e40"
+        },
+        {
+          "question_id": "dc5a9544-73ad-4fa7-9217-857efa47a449",
+          "question": "What is the primary motivation behind using conditional computation in deep learning models?",
+          "user_answer": "To increase model capacity without a proportional increase in computational costs",
+          "correct_answer": "To increase model capacity without a proportional increase in computational costs",
+          "is_correct": true,
+          "explanation": "According to the paper, conditional computation is used to increase model capacity without a proportional increase in computational costs, as the entire model is not activated for every example, thus reducing the quadratic blow-up in training costs.",
+          "concept_id": "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89"
+        }
+      ],
+      "weak_concepts": [
+        "e62a476f-b31c-45f1-89c4-88057170f782",
+        "3ce57818-656d-481e-b5b8-c1fbec098e40"
+      ],
+      "strong_concepts": [
+        "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89"
+      ],
+      "concept_scores": {
+        "e62a476f-b31c-45f1-89c4-88057170f782": 0.0,
+        "3ce57818-656d-481e-b5b8-c1fbec098e40": 0.0,
+        "bbf5e6c6-dadd-4503-8dd6-adf7f14c0e89": 1.0
+      }
+    }
   ]
 }
