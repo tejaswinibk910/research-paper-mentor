@@ -253,44 +253,6 @@ Four distinct tutoring modes:
    npm run build
    npm run start
    ```
-
-##  Usage Guide
-
-### 1. Register & Login
-- Navigate to `http://localhost:3000/register`
-- Create an account with email, username, and password
-- Login at `http://localhost:3000/login`
-
-### 2. Upload a Research Paper
-- Click "Upload Paper" on the dashboard
-- Select a PDF file (research paper)
-- Wait for processing (extraction, chunking, embedding, concept extraction)
-- Paper appears in your library when ready
-
-### 3. Explore Paper Features
-
-#### Chat with AI Tutor
-- Select tutoring mode (Socratic, Direct, Hints, Analogies)
-- Ask questions about concepts, methodology, results
-- Get context-aware explanations with page references
-
-#### Take Quizzes
-- Generate quizzes based on paper concepts
-- Choose difficulty level (Easy, Medium, Hard)
-- Receive immediate feedback and explanations
-- Track your scores over time
-
-#### View Concept Graph
-- Interactive visualization of paper concepts
-- Explore relationships between ideas
-- Understand paper structure at a glance
-
-#### Track Progress
-- Monitor concept mastery levels
-- View retention statistics
-- See which concepts need review
-- Follow spaced repetition schedule
-
 ##  Technology Stack
 
 ### Backend
@@ -338,50 +300,4 @@ Four distinct tutoring modes:
 - Relationship mapping
 - Difficulty assessment
 
-##  Troubleshooting
-
-### Backend Issues
-
-**Import Errors**
-```bash
-# Ensure you're in the backend directory and venv is activated
-cd backend
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
-```
-
-**Database Errors**
-```bash
-# Reinitialize database
-rm research_mentor.db
-python init_db.py
-```
-
-**ChromaDB Version Conflicts**
-```bash
-# Install specific versions
-pip install chromadb==0.4.22 --break-system-packages
-pip install numpy==1.24.3 --break-system-packages
-```
-
-**Environment Variable Errors**
-```bash
-# Verify .env file exists and is properly formatted
-# Check for encoding issues (use UTF-8)
-python test_env.py  # Test environment loading
-```
-
-### Frontend Issues
-
-**Module Not Found**
-```bash
-# Clear cache and reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
-
-**API Connection Issues**
-- Verify backend is running on port 8000
-- Check CORS settings in backend `.env`
-- Ensure frontend is using correct API URL
 
